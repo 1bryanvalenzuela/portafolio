@@ -1,0 +1,84 @@
+<div class="relative flex h-[60vh] w-full bg-primary">
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="content-bg absolute -inset-[10px]"></div>
+  </div>
+  <div
+    class="absolute flex flex-col w-full h-[800px] light-top items-center text-center gap-11"
+  >
+    <h1
+      class="flex z-2 ubuntu-mono-regular text-5xl md:text-6xl font-bold text-color-primary transition-colors pt-15"
+    >
+      Bryan Valenzuela
+    </h1>
+    <p
+      class="w-full px-8 md:px-0 md:w-[500px] ubuntu-regular text-justify md:text-lg z-2"
+    >
+      Egresado como Ingeniero en Negocios Internacionales. Apasionado por las
+      tecnologias y autodidacta en programación e informatica. Me enfoco en
+      hacer la conexión entre los negocios y la programación.
+    </p>
+    <p
+      class="w-full px-8 md:px-0 md:w-[500px] ubuntu-regular text-justify md:text-lg z-3"
+    >
+      Realizo análisis de datos, automatización, bases de datos, desarrollo web
+      y otros. Me adapto a las necesidades y entrego un servicio de calidad.
+    </p>
+    <ul
+      class="w-full px-8 md:px-0 md:w-[500px] flex text-color-primary ubuntu-mono-regular text-2xl font-bold gap-8 underline z-3"
+    >
+      <li><a href="#">Mail</a></li><li><a href="#">Github</a></li><li>
+        <a href="#">LinkedIn</a>
+      </li>
+    </ul>
+    <ul
+      class="w-full px-8 md:px-0 md:w-[500px] flex text-color-primary ubuntu-mono-regular text-2xl font-bold gap-8 underline z-3"
+    >
+      <li>
+        <a class="hover:text-black" href="#">Curriculum Vitae</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div
+  class="relative h-[30vh] flex bg-primary justify-center items-center text-5xl font-bold transition-colors"
+>
+  <span class="ml-1 rounded-xl bg-current p-2 text-[0.7em] leading-none">
+    <span class="text-white">React</span></span
+  >
+</div>
+
+<style>
+  .content-bg {
+    --stripes: repeating-linear-gradient(
+      100deg,
+      #23601720 0%,
+      #23601720 7%,
+      transparent 10%,
+      transparent 12%,
+      #23601720 16%
+    );
+    --rainbow: repeating-linear-gradient(
+      100deg,
+      #a6ffa609 10%,
+      #7cff6b28 15%,
+      #a6ffa609 20%,
+      #38ff5924 25%,
+      #a6ffa609 30%
+    );
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 300%, 200%;
+    background-position:
+      50% 50%,
+      50% 50%;
+    pointer-events: none;
+    mask-image: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.8) 10%,
+        transparent 40%,
+        transparent 60%,
+        rgba(0, 0, 0, 0.8) 90%
+      ),
+      linear-gradient(0deg, transparent 5%, black 40%);
+    mask-composite: intersect, intersect;
+  }
+</style>
