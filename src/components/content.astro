@@ -1,50 +1,71 @@
-<div class="relative flex h-[60vh] w-full bg-primary">
+---
+import Contributions from "./gitcontrib";
+
+// Info via JSON
+// Proyectos via JSON
+// Formulario para contactar
+// Animación en los LINKS
+// Animación. Pagina separada para proyectos (?)
+// Certificados al final
+// Animación escritura en nombre
+
+---
+
+<div class="relative flex w-full bg-primary">
   <div class="absolute inset-0 overflow-hidden">
     <div class="content-bg absolute -inset-[10px]"></div>
   </div>
   <div
-    class="absolute flex flex-col w-full h-[800px] light-top items-center text-center gap-11"
+    class="flex flex-col w-full light-top items-center text-center gap-11 py-15"
   >
     <h1
-      class="flex z-2 ubuntu-mono-regular text-5xl md:text-6xl font-bold text-color-primary transition-colors pt-15"
-    >
-      Bryan Valenzuela
+      class="flex z-2 ubuntu-mono-regular text-4xl md:text-6xl font-bold text-color-primary transition-colors"
+    >Bryan Valenzuela
     </h1>
     <p
-      class="w-full px-8 md:px-0 md:w-[500px] ubuntu-regular text-justify md:text-lg z-2"
+      class="w-full px-8 md:px-0 md:w-[700px] ubuntu-regular text-justify z-2"
     >
-      Egresado como Ingeniero en Negocios Internacionales. Apasionado por las
-      tecnologias y autodidacta en programación e informatica. Me enfoco en
-      hacer la conexión entre los negocios y la programación.
+    Ingeniero en Negocios Internacionales, especialista en gestionar la tecnología y los datos, para hacerlos más eficientes. Con experiencia en desarrollo web, confección y gestión de bases de datos, y soporte informático.
     </p>
     <p
-      class="w-full px-8 md:px-0 md:w-[500px] ubuntu-regular text-justify md:text-lg z-3"
+      class="w-full px-8 md:px-0 md:w-[700px] ubuntu-regular text-justify z-3"
     >
-      Realizo análisis de datos, automatización, bases de datos, desarrollo web
-      y otros. Me adapto a las necesidades y entrego un servicio de calidad.
+    En general, ofrezco análisis de datos estadísticos, creación de bases de datos desde cero, desarrollo funcional y visual de sitios web, y asesoría tecnológica para hacer más eficientes los procesos comerciales.
     </p>
-    <ul
-      class="w-full px-8 md:px-0 md:w-[500px] flex text-color-primary ubuntu-mono-regular text-2xl font-bold gap-8 underline z-3"
-    >
-      <li><a href="#">Mail</a></li><li><a href="#">Github</a></li><li>
-        <a href="#">LinkedIn</a>
+    <div class="w-full px-8 md:px-0 md:w-[700px] flex flex-col md:flex-row md:justify-between text-color-primary ubuntu-mono-regular text-2xl font-bold gap-8 z-3">
+    <ul class="flex flex-row gap-8">
+      <li><a class="link" href="#">Mail</a></li><li>
+        <a class="link" href="#">Github</a>
+      </li><li>
+        <a class="link" href="#">LinkedIn</a>
       </li>
     </ul>
-    <ul
-      class="w-full px-8 md:px-0 md:w-[500px] flex text-color-primary ubuntu-mono-regular text-2xl font-bold gap-8 underline z-3"
-    >
+    <ul class="flex">
       <li>
-        <a class="hover:text-black" href="#">Curriculum Vitae</a>
+        <a class="link" href="#">Curriculum Vitae</a>
       </li>
     </ul>
   </div>
+  </div>
 </div>
-<div
-  class="relative h-[30vh] flex bg-primary justify-center items-center text-5xl font-bold transition-colors"
->
-  <span class="ml-1 rounded-xl bg-current p-2 text-[0.7em] leading-none">
-    <span class="text-white">React</span></span
-  >
+<div id="projects" class="flex bg-primary ubuntu-regular items-center justify-center">
+  <ul class="flex flex-row w-full md:w-[700px] gap-8 border rounded-lg p-2 m-8 md:m-0 contenedor-style">
+    <div class="bg-black w-full h-auto"></div>
+    <li class="flex flex-col gap-2">
+      <h1 class="text-start text-color-primary ubuntu-mono-regular text-2xl font-bold">Transportes Nemo</h1>
+      <p class="text-justify">
+        Creación de una web para una empresa de transportes. Incluye formularios conectados a una base de datos, validación de datos, higienización, seguridad, etc.
+      </p>
+      <div>
+      <span class="rounded-full bg-secondary p-1 leading-none">
+        <span class="text-white px-2">React</span></span
+      ></div>
+    </li>
+  </ul>
+</div>
+<div class="flex justify-center bg-primary py-15">
+  <div class="w-full px-8 md:px-0 md:w-[720px]">
+  <Contributions client:only="React" /></div>
 </div>
 
 <style>

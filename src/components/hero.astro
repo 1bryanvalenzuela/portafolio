@@ -1,19 +1,20 @@
 ---
+import { Image } from 'astro:assets';
 import img from "../assets/IMG2.webp";
 ---
 
-<div
-  class="relative flex flex-col h-[65vh] md:h-[55vh] items-center justify-center bg-secondary transition-bg shadow-bottom"
+<div id="inicio" class="relative flex flex-col h-[65vh] md:h-[55vh] items-center justify-center bg-secondary transition-bg shadow-bottom"
 >
   <div class="absolute inset-0 overflow-hidden">
     <div class="jumbo absolute -inset-[10px] bg-secondary"></div>
   </div>
   <div class="absolute pt-[12vh] z-2">
     <div class="w-65 h-65 bg-primary rounded-full p-2.5 contenedor-style">
-      <img
-        src={img.src}
+      <Image
+        src={img}
+        loading="early"
         alt="Imagen"
-        class="w-full h-full rounded-full object-cover"
+        class="w-full h-full rounded-full object-cover border border-transparent"
       />
     </div>
     <div class="flex justify-center text-center py-8">
@@ -32,11 +33,6 @@ import img from "../assets/IMG2.webp";
 </div>
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
-
-  body {
-    font-family: Inter, sans-serif;
-  }
 
   @keyframes jumbo {
     from {
@@ -46,8 +42,8 @@ import img from "../assets/IMG2.webp";
     }
     to {
       background-position:
-        350% 50%,
-        350% 50%;
+        250% 50%,
+        250% 50%;
     }
   }
 
@@ -103,7 +99,7 @@ import img from "../assets/IMG2.webp";
       black 50%,
       transparent 100%
     );
-    filter: blur(10px) opacity(50%) saturate(200%);
+    filter: blur(5px) opacity(50%) saturate(200%);
   }
 
   .jumbo::after {
