@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+:root {
+  --animate-typewriter: typewriter 1s ease-in-out infinite;
+  @keyframes typewriter: {
+    to: {
+      left: "100%",
+    },
+  }
+}
+
 .ubuntu-regular {
     font-family: "Ubuntu Sans Variable", sans-serif;
   }
@@ -14,48 +23,6 @@
 
   .linkheader:hover {
     color: black;
-  }
-
-  .link {
-    position: relative;
-    transition: color 0.2s ease-in-out;
-  }
-  
-  .link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 100%;
-    height: 2px;
-    background-color: currentColor;
-    transition: transform 0.2s ease-in-out, height 0.2s ease-in-out, bottom 0.2s ease-in-out;
-    pointer-events: none;
-  }
-  
-  .link:hover {
-    animation: textColorChange 0.4s linear forwards;
-  }
-  
-  .link:hover::after {
-    bottom: -9px; /* Aleja la underline */
-    transform: scaleX(0.6); /* Reduce el ancho de la underline */
-  }
-  
-  @keyframes textColorChange {
-  
-    0% {
-      color:rgb(25, 155, 112);
-    }
-    33% {
-      color: rgb(0, 207, 180);
-    }
-    66% {
-      color: rgb(151, 0, 38);
-    }
-    100% {
-      color: black;
-    }
   }
 
 .contenedor-style {
@@ -81,7 +48,7 @@
 }
 
 .bg-secondary {
-    background-color: #63ad54;
+    background-color: #4db637;
 }
 
 .fill-primary {

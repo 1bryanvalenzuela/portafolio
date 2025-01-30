@@ -1,5 +1,11 @@
 ---
 import Contributions from "./gitcontrib";
+import Form from "./form/main.astro";
+import Enlaces from "./links/main.astro";
+import Card from "./card.astro";
+import projects from "../../public/projects.json"
+
+const projectsArray = Object.entries(projects);
 
 // Info via JSON
 // Proyectos via JSON
@@ -8,7 +14,6 @@ import Contributions from "./gitcontrib";
 // Animación. Pagina separada para proyectos (?)
 // Certificados al final
 // Animación escritura en nombre
-
 ---
 
 <div class="relative flex w-full bg-primary">
@@ -19,53 +24,57 @@ import Contributions from "./gitcontrib";
     class="flex flex-col w-full light-top items-center text-center gap-11 py-15"
   >
     <h1
-      class="flex z-2 ubuntu-mono-regular text-4xl md:text-6xl font-bold text-color-primary transition-colors"
-    >Bryan Valenzuela
+      class="flex z-2 ubuntu-mono-regular text-4xl md:text-6xl font-bold text-color-primary transition-colors
+before:animate-typewriter after:animate-caret"
+    >
+      Bryan Valenzuela
     </h1>
-    <p
-      class="w-full px-8 md:px-0 md:w-[700px] ubuntu-regular text-justify z-2"
-    >
-    Ingeniero en Negocios Internacionales, especialista en gestionar la tecnología y los datos, para hacerlos más eficientes. Con experiencia en desarrollo web, confección y gestión de bases de datos, y soporte informático.
+    <p class="w-full px-8 md:px-0 md:w-[700px] ubuntu-regular text-justify z-2">
+      Ingeniero en Negocios Internacionales, especialista en gestionar la
+      tecnología y los datos, para hacerlos más eficientes. Con experiencia en
+      desarrollo web, confección y gestión de bases de datos, y soporte
+      informático.
     </p>
-    <p
-      class="w-full px-8 md:px-0 md:w-[700px] ubuntu-regular text-justify z-3"
-    >
-    En general, ofrezco análisis de datos estadísticos, creación de bases de datos desde cero, desarrollo funcional y visual de sitios web, y asesoría tecnológica para hacer más eficientes los procesos comerciales.
+    <p class="w-full px-8 md:px-0 md:w-[700px] ubuntu-regular text-justify z-3">
+      En general, ofrezco análisis de datos estadísticos, creación de bases de
+      datos desde cero, desarrollo funcional y visual de sitios web, y asesoría
+      tecnológica para hacer más eficientes los procesos comerciales.
     </p>
-    <div class="w-full px-8 md:px-0 md:w-[700px] flex flex-col md:flex-row md:justify-between text-color-primary ubuntu-mono-regular text-2xl font-bold gap-8 z-3">
-    <ul class="flex flex-row gap-8">
-      <li><a class="link" href="#">Mail</a></li><li>
-        <a class="link" href="#">Github</a>
-      </li><li>
-        <a class="link" href="#">LinkedIn</a>
-      </li>
-    </ul>
-    <ul class="flex">
-      <li>
-        <a class="link" href="#">Curriculum Vitae</a>
-      </li>
-    </ul>
-  </div>
+    <div
+      class="w-full px-8 md:px-0 md:w-[700px] flex flex-col md:flex-row md:justify-between text-color-primary ubuntu-mono-regular text-2xl font-bold gap-8 z-3"
+    >
+      <Enlaces />
+    </div>
   </div>
 </div>
-<div id="projects" class="flex bg-primary ubuntu-regular items-center justify-center">
-  <ul class="flex flex-row w-full md:w-[700px] gap-8 border rounded-lg p-2 m-8 md:m-0 contenedor-style">
-    <div class="bg-black w-full h-auto"></div>
-    <li class="flex flex-col gap-2">
-      <h1 class="text-start text-color-primary ubuntu-mono-regular text-2xl font-bold">Transportes Nemo</h1>
-      <p class="text-justify">
-        Creación de una web para una empresa de transportes. Incluye formularios conectados a una base de datos, validación de datos, higienización, seguridad, etc.
+<div
+  id="projects"
+  class="flex bg-primary ubuntu-regular items-center justify-center pt-15"
+>
+  <div
+    class="flex flex-col w-full md:w-[700px] gap-8"
+  >
+  <h2
+      class="flex z-2 ubuntu-mono-regular text-3xl md:text-4xl font-bold text-color-primary transition-colors mx-8 md:mx-0"
+    >
+      /proyectos
+    </h2>
+  {projectsArray.map(([id, project]) => (
+      <Card id={id} title={project.title} tags={project.tags}><p class="text-justify">
+        {project.content}
       </p>
-      <div>
-      <span class="rounded-full bg-secondary p-1 leading-none">
-        <span class="text-white px-2">React</span></span
-      ></div>
-    </li>
-  </ul>
+  </Card> ))}
+  </div>
 </div>
 <div class="flex justify-center bg-primary py-15">
   <div class="w-full px-8 md:px-0 md:w-[720px]">
-  <Contributions client:only="React" /></div>
+    <Contributions client:only="React" />
+  </div>
+</div>
+<div class="flex justify-center bg-primary">
+  <div class="w-full px-8 md:px-0 md:w-[720px]">
+    <Form />
+  </div>
 </div>
 
 <style>
