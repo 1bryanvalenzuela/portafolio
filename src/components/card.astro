@@ -1,0 +1,18 @@
+---
+const { img, title, tags } = Astro.props;
+---
+
+<div class="flex flex-col md:flex-row gap-8 border border-4 border-transparent rounded-lg p-2 mx-8 md:m-0 contenedor-style justify-center md:justify-start">
+<div class="bg-black w-auto h-50 md:w-50 md:h-50"></div>
+<div class="flex flex-col gap-2">
+  <h4
+    class="text-start text-color-primary ubuntu-mono-regular text-2xl font-bold"
+  >
+    {title}
+  </h4>
+  <slot />
+<div>
+      <span class="rounded-full bg-secondary p-1 leading-none">
+        <span class="text-white px-2">{tags}</span></span>
+    </div>
+</div>
