@@ -4,11 +4,11 @@ const { id, placeholder } = Astro.props;
 
 <label
   for={id}
-  class="relative w-full block rounded-md border border-gray-200 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+  class="relative block rounded-md border border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600"
 >
   <textarea
     id={id}
-    class="w-[700px] peer ubuntu-regular border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 resize-none py-2 px-4"
+    class="peer ubuntu-regular border-none bg-transparent focus:border-transparent focus:outline-none focus:ring-0 resize-none py-2 px-4"
     rows={4}
     placeholder={placeholder}></textarea>
 </label>

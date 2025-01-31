@@ -3,13 +3,26 @@ import Label from "./label.astro";
 import TextArea from "./textarea.astro";
 ---
 
-<form class="flex flex-col justify-center gap-8 py-15">
-  <div class="flex flex-row justify-center gap-8">
-    <Label class="w-full" id="name" type="text" placeholder="Nombre" />
+<form class="flex flex-col md:flex-row justify-center gap-8 py-15">
+  <div class="flex basis-1/2 items-center px-2">
+    <h2 class="ubuntu-regular text-xl md:text-2xl text-prettier">
+      Si necesitas de algún servicio relacionado a la informatica y/o negocios,
+      <span class="font-bold text-color-primary">contactame!</span>
+    </h2>
+  </div>
+  <div class="flex basis-1/2 flex-col justify-center gap-8 px-2">
+    <Label id="name" type="text" placeholder="Nombre" />
     <Label id="email" type="email" placeholder="Correo" />
+    <TextArea id="content" placeholder="Mensaje" />
+    <button
+      class="bg-button w-[50%] border-green-400 shadow-sm rounded-md ubuntu-regular font-semibold hover:text-green-50 cursor-pointer transition-all"
+      >Enviar</button
+    >
   </div>
-  <div class="flex justify-center">
-    <TextArea class="w-full" id="content" placeholder="Mensaje" />
-  </div>
-  <button class="bg-secondary">Enviar</button>
 </form>
+
+<style>
+  .bg-button {
+    background: linear-gradient(0deg, #257e13 -20%, #63c74f 80%);
+  }
+</style>

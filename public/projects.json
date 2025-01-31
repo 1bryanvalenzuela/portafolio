@@ -2,11 +2,21 @@
     "transportes nemo": {
         "title": "Transportes Nemo",
         "content": "Creación de una web para una empresa de transportes. Incluye formularios conectados a una base de datos, validación de datos, higienización, seguridad, etc.",
-        "tags": "React"
+        "tags": "Astro, React, ExpressJS, PostgreSQL"
     },
     "mp reviews": {
         "title": "MP Reviews",
-        "content": "Descripción bacan",
-        "tags": "React"
+        "content": "Creación de una web de reseñas de videojuegos utilizando React y AWS. Incluye una base de datos (DynamoDB), sistema de autentificación (Cognito), almacenamiento de archivos, etc.",
+        "tags": "React, AWS, DynamoDB, Cognito"
+    },
+    "dashboard": {
+        "title": "Dashboard - Productos de supermercados chilenos",
+        "content": "Creación de un dashboard en PowerBI con precios e información acerca de productos chilenos. Se utilizó un script automatizado para obtener los datos de los supermercados",
+        "tags": "React, AWS, DynamoDB, Cognito"
+    },
+    "otros": {
+        "title": "Más proyectos",
+        "content": "Analisis de datos, scrapping, scripts, etc.",
+        "tags": "React, AWS, DynamoDB, Cognito"
     }
 }
