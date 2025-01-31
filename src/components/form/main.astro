@@ -3,12 +3,13 @@ import Label from "./label.astro";
 import TextArea from "./textarea.astro";
 ---
 
-<form class="flex flex-col justify-center gap-8">
+<form class="flex flex-col justify-center gap-8 py-15">
   <div class="flex flex-row justify-center gap-8">
-  <Label class="w-full" id="name" type="text" placeholder="Nombre" />
-  <Label id="email" type="email" placeholder="Correo" />
+    <Label class="w-full" id="name" type="text" placeholder="Nombre" />
+    <Label id="email" type="email" placeholder="Correo" />
   </div>
   <div class="flex justify-center">
     <TextArea class="w-full" id="content" placeholder="Mensaje" />
   </div>
+  <button class="bg-secondary">Enviar</button>
 </form>

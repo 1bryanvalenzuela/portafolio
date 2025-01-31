@@ -3,7 +3,7 @@ import Contributions from "./gitcontrib";
 import Form from "./form/main.astro";
 import Enlaces from "./links/main.astro";
 import Card from "./card.astro";
-import projects from "../../public/projects.json"
+import projects from "../../public/projects.json";
 
 const projectsArray = Object.entries(projects);
 
@@ -21,7 +21,7 @@ const projectsArray = Object.entries(projects);
     <div class="content-bg absolute -inset-[10px]"></div>
   </div>
   <div
-    class="flex flex-col w-full light-top items-center text-center gap-11 py-15"
+    class="flex flex-col w-full light-top items-center text-center gap-12 py-30"
   >
     <h1
       class="flex z-2 ubuntu-mono-regular text-4xl md:text-6xl font-bold text-color-primary transition-colors
@@ -49,30 +49,35 @@ before:animate-typewriter after:animate-caret"
 </div>
 <div
   id="projects"
-  class="flex bg-primary ubuntu-regular items-center justify-center pt-15"
+  class="flex bg-primary ubuntu-regular items-center justify-center"
 >
-  <div
-    class="flex flex-col w-full md:w-[700px] gap-8"
-  >
-  <h2
+  <div class="flex flex-col w-full md:w-[700px] gap-12">
+    <h2
       class="flex z-2 ubuntu-mono-regular text-3xl md:text-4xl font-bold text-color-primary transition-colors mx-8 md:mx-0"
     >
       /proyectos
     </h2>
-  {projectsArray.map(([id, project]) => (
-      <Card id={id} title={project.title} tags={project.tags}><p class="text-justify">
-        {project.content}
-      </p>
-  </Card> ))}
+    {
+      projectsArray.map(([id, project]) => (
+        <Card id={id} title={project.title} tags={project.tags}>
+          <p class="text-justify">{project.content}</p>
+        </Card>
+      ))
+    }
   </div>
 </div>
-<div class="flex justify-center bg-primary py-15">
+<div class="flex justify-center bg-primary pt-12">
   <div class="w-full px-8 md:px-0 md:w-[720px]">
     <Contributions client:only="React" />
   </div>
 </div>
-<div class="flex justify-center bg-primary">
+<div id="contact" class="flex justify-center bg-primary pt-30">
   <div class="w-full px-8 md:px-0 md:w-[720px]">
+    <h2
+      class="flex z-2 ubuntu-mono-regular text-3xl md:text-4xl font-bold text-color-primary transition-colors mx-8 md:mx-0"
+    >
+      /contacto
+    </h2>
     <Form />
   </div>
 </div>

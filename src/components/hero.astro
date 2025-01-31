@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import img from "../assets/IMG2.webp";
+import img from "../assets/image.webp";
 ---
 
 <div
@@ -20,10 +20,10 @@ import img from "../assets/IMG2.webp";
       />
     </div>
     <div class="flex justify-center text-center py-8">
-      <h1 class="font-bold pe-2 text-xl text-green-950 ubuntu-mono-regular">
+      <h4 class="font-bold pe-2 text-xl text-green-950 ubuntu-mono-regular">
         Disponible
-      </h1>
-      <span class="h-3 w-3 pointer-events-none mt-[4px]">
+      </h4>
+      <span class="h-3 w-3 pointer-events-none mt-[2.5px]">
         <span
           class="animate-ping absolute inline-flex h-3 w-3 mt-1.5 rounded-full bg-green-300"
         ></span>
@@ -35,41 +35,42 @@ import img from "../assets/IMG2.webp";
 </div>
 
 <style>
-@keyframes movingBackground {
-  from {
-    background-position: 0% 50%;
+  @keyframes movingBackground {
+    from {
+      background-position: 0% 50%;
+    }
+    to {
+      background-position: 200% 50%;
+    }
   }
-  to {
-    background-position: 200% 50%;
-  }
-}
 
-.jumbo {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(100deg, 
-  transparent 10%, 
-  rgba(255, 255, 255, 0.6) 13%,
-  rgba(255, 255, 255, 0.7) 16%,
-  transparent 20%,
-  rgba(255, 255, 255, 0.9) 30%,
-  transparent 40%,
-  rgba(0, 0, 0, 0.8) 45%,
-  transparent 50%, 
-  rgba(255, 255, 255, 0.5) 53%,
-  rgba(255, 255, 255, 0.4) 56%,
-  transparent 60%,
-  rgba(0, 0, 0, 0.7) 65%,
-  transparent 70%,
-  rgba(255, 255, 255, 0.9) 75%,
-  transparent 80%,
-  rgba(0, 0, 0, 0.7) 85%,
-  transparent 90%
-  );
-  background-size: 200% 100%;
-  animation: movingBackground 15s linear infinite;
-  pointer-events: none;
-  filter: blur(5px) opacity(30%);
-  mix-blend-mode: overlay;
-}
+  .jumbo {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      100deg,
+      transparent 10%,
+      rgba(255, 255, 255, 0.6) 13%,
+      rgba(255, 255, 255, 0.7) 16%,
+      transparent 20%,
+      rgba(255, 255, 255, 0.9) 30%,
+      transparent 40%,
+      rgba(0, 0, 0, 0.8) 45%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.5) 53%,
+      rgba(255, 255, 255, 0.4) 56%,
+      transparent 60%,
+      rgba(0, 0, 0, 0.7) 65%,
+      transparent 70%,
+      rgba(255, 255, 255, 0.9) 75%,
+      transparent 80%,
+      rgba(0, 0, 0, 0.7) 85%,
+      transparent 90%
+    );
+    background-size: 200% 100%;
+    animation: movingBackground 15s linear infinite;
+    pointer-events: none;
+    filter: blur(5px) opacity(30%);
+    mix-blend-mode: overlay;
+  }
 </style>
