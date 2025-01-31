@@ -51,6 +51,10 @@
     background-color: #4db637;
 }
 
+.border-secondary {
+  border-color: #236017;
+}
+
 .fill-primary {
     fill: #75AE69
 }

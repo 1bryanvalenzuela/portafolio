@@ -63,7 +63,12 @@ before:animate-typewriter after:animate-caret"
     </h2>
     {
       projectsArray.map(([id, project]) => (
-        <Card id={id} title={project.title} tags={project.tags}>
+        <Card
+          id={id}
+          title={project.title}
+          tags={project.tags}
+          link={project.link}
+        >
           <p class="text-justify">{project.content}</p>
         </Card>
       ))

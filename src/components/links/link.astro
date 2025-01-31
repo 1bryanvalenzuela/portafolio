@@ -2,51 +2,50 @@
 const { href } = Astro.props;
 ---
 
-<a class="link" href={href} ><slot /></a>
+<a class="link" href={href}><slot /></a>
 
-  <style>
-    .link {
-      position: relative;
-      transition: color 0.2s ease-in-out;
-    }
+<style>
+  .link {
+    position: relative;
+    transition: color 0.2s ease-in-out;
+  }
 
-    .link::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 100%;
-      height: 2px;
-      background-color: currentColor;
-      transition:
-        transform 0.2s ease-in-out,
-        height 0.2s ease-in-out,
-        bottom 0.2s ease-in-out;
-      pointer-events: none;
-    }
+  .link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transition:
+      transform 0.2s ease-in-out,
+      height 0.2s ease-in-out,
+      bottom 0.2s ease-in-out;
+    pointer-events: none;
+  }
 
-    .link:hover {
-      animation: textColorChange 0.4s linear forwards;
-    }
+  .link:hover {
+    animation: textColorChange 0.4s linear forwards;
+  }
 
-    .link:hover::after {
-      bottom: -9px;
-      transform: scaleX(0.6);
-    }
+  .link:hover::after {
+    bottom: -9px;
+    transform: scaleX(0.6);
+  }
 
-    @keyframes textColorChange {
-      0% {
-        color: rgb(25, 155, 112);
-      }
-      33% {
-        color: rgb(0, 207, 180);
-      }
-      66% {
-        color: rgb(151, 0, 38);
-      }
-      100% {
-        color: black;
-      }
+  @keyframes textColorChange {
+    0% {
+      color: rgb(25, 155, 112);
     }
-  </style>
-</a>
+    33% {
+      color: rgb(0, 207, 180);
+    }
+    66% {
+      color: rgb(151, 0, 38);
+    }
+    100% {
+      color: black;
+    }
+  }
+</style>

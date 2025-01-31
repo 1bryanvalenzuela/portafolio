@@ -1,17 +1,19 @@
 ---
-const { img, title, tags } = Astro.props;
+const { img, title, tags, link } = Astro.props;
 ---
 
 <div
-  class="flex flex-col md:flex-row gap-8 border border-4 border-transparent rounded-lg p-2 mx-8 md:m-0 contenedor-style justify-center md:justify-start"
+  class="flex flex-col md:flex-row gap-8 border-card rounded-lg p-2 mx-8 md:m-0 contenedor-style justify-center md:justify-start transition-all"
 >
-  <div class="float-right bg-black w-auto h-50 md:w-50 md:h-50"></div>
+  <div class="float-right border-card bg-black w-auto h-50 md:w-50 md:h-50">
+  </div>
   <div class="flex flex-col gap-2">
-    <h4
+    <a
+      href={link}
       class="text-start text-color-primary ubuntu-mono-regular text-xl md:text-2xl font-bold"
     >
       {title}
-    </h4>
+    </a>
     <slot />
     <div>
       <span class="rounded-full bg-secondary p-1 leading-none">
@@ -20,3 +22,36 @@ const { img, title, tags } = Astro.props;
     </div>
   </div>
 </div>
+
+<style>
+  .border-card {
+    position: relative;
+    border: 3px solid transparent;
+    transition:
+      border 0.4s ease-in-out,
+      border-color 0.4s ease-in-out;
+  }
+
+  .border-card:hover {
+    border: 3px solid black;
+    animation: borderColorChange 2s linear infinite;
+  }
+
+  @keyframes borderColorChange {
+    10% {
+      border-color: rgb(25, 155, 112); /* Verde oscuro */
+    }
+    30% {
+      border-color: rgb(0, 207, 180); /* Verde claro */
+    }
+    50% {
+      border-color: rgb(151, 0, 38); /* Rojo oscuro */
+    }
+    70% {
+      border-color: black; /* Regresa a negro */
+    }
+    90% {
+      border-color: rgb(25, 155, 112); /* Regresa a negro */
+    }
+  }
+</style>
