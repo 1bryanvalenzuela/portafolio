@@ -1,25 +1,36 @@
 ---
 const { img, title, tags, link } = Astro.props;
+
+const tagsArray = Object.values(tags);
+const imgSrc = `/${img}`;
 ---
 
 <div
-  class="flex flex-col md:flex-row gap-8 border-card rounded-lg p-2 mx-8 md:m-0 contenedor-style justify-center md:justify-start transition-all"
+  class="flex flex-col gap-2 border-card rounded-lg p-2 mx-8 md:m-0 contenedor-style transition-all"
 >
-  <div class="float-right border-card bg-black w-auto h-50 md:w-50 md:h-50">
-  </div>
-  <div class="flex flex-col gap-2">
-    <a
-      href={link}
-      class="text-start text-color-primary ubuntu-mono-regular text-xl md:text-2xl font-bold"
-    >
-      {title}
-    </a>
-    <slot />
-    <div>
-      <span class="rounded-full bg-secondary p-1 leading-none">
-        <span class="text-white px-2">{tags}</span></span
+  <a href={link} class="flex flex-col md:flex-row gap-8">
+    <img
+      src={imgSrc}
+      loading="lazy"
+      class="rounded-lg w-auto max-w-70 md:max-w-50 mx-auto md:mx-0"
+    />
+    <div class="flex flex-col gap-2">
+      <span
+        class="text-start text-color-primary ubuntu-mono-regular text-xl md:text-2xl font-bold"
       >
+        {title}
+      </span>
+      <slot />
     </div>
+  </a>
+  <div class="flex gap-2 justify-end items-end">
+    {
+      tagsArray.map((tag) => (
+        <span class="rounded-full bg-secondary p-1 leading-none">
+          <span class="text-white px-1">{tag}</span>
+        </span>
+      ))
+    }
   </div>
 </div>
 
@@ -34,7 +45,7 @@ const { img, title, tags, link } = Astro.props;
 
   .border-card:hover {
     border: 3px solid black;
-    animation: borderColorChange 2s linear infinite;
+    animation: borderColorChange 5s linear infinite;
   }
 
   @keyframes borderColorChange {
@@ -42,7 +53,7 @@ const { img, title, tags, link } = Astro.props;
       border-color: rgb(25, 155, 112); /* Verde oscuro */
     }
     30% {
-      border-color: rgb(0, 207, 180); /* Verde claro */
+      border-color: rgb(45, 0, 207); /* Verde claro */
     }
     50% {
       border-color: rgb(151, 0, 38); /* Rojo oscuro */

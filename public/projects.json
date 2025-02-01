@@ -1,26 +1,30 @@
 {
     "transportes nemo": {
         "title": "Transportes Nemo",
+        "img": "transportes.webp",
         "content": "Creación de una web para una empresa de transportes. Incluye formularios conectados a una base de datos, validación de datos, higienización, seguridad, etc.",
-        "tags": "Astro, React, ExpressJS, PostgreSQL",
+        "tags": ["Astro", "React", "ExpressJS", "PostgreSQL"],
         "link": "https://nemo-frontend-production.up.railway.app"
     },
     "mp reviews": {
         "title": "MP Reviews",
+        "img": "mp.webp",
         "content": "Creación de una web de reseñas de videojuegos utilizando React y AWS. Incluye una base de datos (DynamoDB), sistema de autentificación (Cognito), almacenamiento de archivos, etc.",
-        "tags": "React, AWS, DynamoDB, Cognito",
+        "tags": ["React", "AWS", "DynamoDB", "Cognito"],
         "link": "https://main.d9yrixme2n119.amplifyapp.com"
     },
     "dashboard": {
         "title": "Dashboard - Productos de supermercados chilenos",
+        "img": "dashboard.webp",
         "content": "Creación de un dashboard en PowerBI con precios e información acerca de productos chilenos. Se utilizó un script automatizado para obtener los datos de los supermercados",
-        "tags": "React, AWS, DynamoDB, Cognito",
+        "tags": ["Python", "PowerBI"],
         "link": "https://github.com/1bryanvalenzuela/Comparador-Supermercados-Chile"
     },
     "otros": {
         "title": "Más proyectos",
+        "img": "github.webp",
         "content": "Analisis de datos, scrapping, scripts, etc.",
-        "tags": "",
+        "tags": [],
         "link": "https://github.com/1bryanvalenzuela"
     }
 }
