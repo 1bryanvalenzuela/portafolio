@@ -7,13 +7,13 @@ import projects from "../../public/projects.json";
 
 const projectsArray = Object.entries(projects);
 
-// Info via JSON
-// Proyectos via JSON
+// Info via JSON (?)
+// Proyectos via JSON /
 // Formulario para contactar
-// Animación en los LINKS
-// Animación. Pagina separada para proyectos (?)
+// Animación en los LINKS /
+// Animación. Pagina separada para proyectos X
 // Certificados al final
-// Animación escritura en nombre
+// Animación escritura en nombre /
 ---
 
 <div class="relative flex w-full bg-primary">
@@ -24,11 +24,10 @@ const projectsArray = Object.entries(projects);
     class="flex flex-col w-full light-top items-center text-center gap-12 pt-30"
   >
     <div
-      class="w-full px-8 md:px-0 md:w-[720px] flex flex-col items-center text-center gap-12"
+      class="w-full px-8 md:px-0 md:w-[720px] flex flex-col items-center text-center gap-12 typewriter"
     >
       <h1
-        class="flex z-2 ubuntu-mono-regular text-3xl md:text-6xl font-bold text-color-primary transition-colors
-before:animate-typewriter after:animate-caret"
+        class="flex z-2 ubuntu-mono-regular text-3xl md:text-6xl font-bold text-color-primary transition-colors"
       >
         Bryan Valenzuela
       </h1>
@@ -94,27 +93,12 @@ before:animate-typewriter after:animate-caret"
 
 <style>
   .content-bg {
-    --stripes: repeating-linear-gradient(
-      100deg,
-      #23601720 0%,
-      #23601720 7%,
-      transparent 10%,
-      transparent 12%,
-      #23601720 16%
+    background-image: repeating-linear-gradient(
+      164deg,
+      #cfffc570 0%,
+      transparent 15%,
+      #cfffc570 30%
     );
-    --rainbow: repeating-linear-gradient(
-      100deg,
-      #a6ffa609 10%,
-      #7cff6b28 15%,
-      #a6ffa609 20%,
-      #38ff5924 25%,
-      #a6ffa609 30%
-    );
-    background-image: var(--stripes), var(--rainbow);
-    background-size: 300%, 200%;
-    background-position:
-      50% 50%,
-      50% 50%;
     pointer-events: none;
     mask-image: linear-gradient(
         90deg,

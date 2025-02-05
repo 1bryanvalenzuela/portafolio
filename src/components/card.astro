@@ -5,34 +5,37 @@ const tagsArray = Object.values(tags);
 const imgSrc = `/${img}`;
 ---
 
-<div
-  class="flex flex-col gap-2 border-card rounded-lg p-2 mx-8 md:m-0 contenedor-style transition-all"
+<a
+  href={link}
+  class="flex flex-col border-card rounded-lg p-2 mx-8 md:m-0 contenedor-style transition-all"
 >
-  <a href={link} class="flex flex-col md:flex-row gap-8">
+  <div class="flex flex-col md:flex-row gap-4 md:gap-2">
     <img
       src={imgSrc}
       loading="lazy"
-      class="rounded-lg w-auto max-w-70 md:max-w-50 mx-auto md:mx-0"
+      class="rounded-lg w-auto max-w-70 md:max-h-40 mx-auto md:mx-0"
     />
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-4 md:gap-2 px-2">
       <span
-        class="text-start text-color-primary ubuntu-mono-regular text-xl md:text-2xl font-bold"
+        class="text-start text-color-primary ubuntu-mono-regular text-lg md:text-xl font-bold"
       >
         {title}
       </span>
       <slot />
+      <div class="flex flex-wrap gap-2 justify-end items-end mt-auto">
+        {
+          tagsArray.map((tag) => (
+            <span class="rounded-full bg-secondary p-1 leading-none">
+              <span class="text-white px-1 text-sm md:text-md font-semibold">
+                {tag}
+              </span>
+            </span>
+          ))
+        }
+      </div>
     </div>
-  </a>
-  <div class="flex gap-2 justify-end items-end">
-    {
-      tagsArray.map((tag) => (
-        <span class="rounded-full bg-secondary p-1 leading-none">
-          <span class="text-white px-1">{tag}</span>
-        </span>
-      ))
-    }
   </div>
-</div>
+</a>
 
 <style>
   .border-card {
@@ -50,19 +53,19 @@ const imgSrc = `/${img}`;
 
   @keyframes borderColorChange {
     10% {
-      border-color: rgb(25, 155, 112); /* Verde oscuro */
+      border-color: black; /* Verde oscuro */
     }
-    30% {
-      border-color: rgb(45, 0, 207); /* Verde claro */
+    20% {
+      border-color: rgb(22, 201, 141); /* Verde claro */
     }
     50% {
-      border-color: rgb(151, 0, 38); /* Rojo oscuro */
+      border-color: rgb(45, 0, 207); /* Rojo oscuro */
     }
     70% {
-      border-color: black; /* Regresa a negro */
+      border-color: rgb(63, 6, 63); /* Regresa a negro */
     }
     90% {
-      border-color: rgb(25, 155, 112); /* Regresa a negro */
+      border-color: black; /* Regresa a negro */
     }
   }
 </style>

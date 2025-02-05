@@ -2,8 +2,8 @@
     "transportes nemo": {
         "title": "Transportes Nemo",
         "img": "transportes.webp",
-        "content": "Creación de una web para una empresa de transportes. Incluye formularios conectados a una base de datos, validación de datos, higienización, seguridad, etc.",
-        "tags": ["Astro", "React", "ExpressJS", "PostgreSQL"],
+        "content": "Creación de una web para una empresa de transportes. Incluye formularios conectados a una base de datos, validación de datos, higienización, seguridad, etc. Otras mierdas más que voy a probar no se lo que estoy escribiendo pero servira para probar la mierda que voy a probar",
+        "tags": ["Astro", "React", "ExpressJS", "PostgreSQL", "Otros"],
         "link": "https://nemo-frontend-production.up.railway.app"
     },
     "mp reviews": {
