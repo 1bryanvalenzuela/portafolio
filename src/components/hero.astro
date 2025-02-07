@@ -5,11 +5,13 @@ import img from "../assets/image.webp";
 
 <div
   id="inicio"
-  class="relative flex flex-col w-full min-h-[400px] h-[65%] md:min-h-[450px] md:h-[50%] items-center justify-center bg-secondary transition-bg shadow-bottom overflow-hidden"
+  class="relative flex flex-col w-full min-h-[350px] h-[65%] md:min-h-[450px] md:h-[50%] items-center justify-center bg-secondary transition-bg shadow-bottom overflow-hidden"
 >
   <div class="logo-background"></div>
   <div class="absolute pt-[11.5vh] z-2">
-    <div class="w-65 h-65 bg-primary rounded-full p-2.5 contenedor-style">
+    <div
+      class="w-55 h-55 md:w-65 md:h-65 bg-primary rounded-full p-2 md:p-2.5 contenedor-style"
+    >
       <Image
         src={img}
         loading="eager"
@@ -20,7 +22,7 @@ import img from "../assets/image.webp";
     <div class="flex justify-center text-center py-8">
       <a
         href="/proba"
-        class="font-bold pe-2 text-xl text-green-950 ubuntu-mono-regular"
+        class="font-bold pe-2 text-lg md:text-xl text-green-950 ubuntu-mono-regular"
       >
         Disponible
       </a>
