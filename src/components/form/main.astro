@@ -15,7 +15,7 @@ import TextArea from "./textarea.astro";
     <Label id="email" type="email" placeholder="Correo" />
     <TextArea id="content" placeholder="Mensaje" />
     <button
-      class="bg-button w-[50%] border-green-400 shadow-sm rounded-md ubuntu-regular font-semibold cursor-pointer py-0.5"
+      class="bg-button w-[50%] border-green-400 shadow-sm rounded-md ubuntu-regular text-primary font-semibold cursor-pointer py-0.5"
       >Enviar</button
     >
   </div>
@@ -23,20 +23,19 @@ import TextArea from "./textarea.astro";
 
 <style>
   .bg-button {
-    background: #5cda43;
-    color: black;
+    background: #68e64f;
     transition:
       background 0.4s ease-in-out,
       box-shadow 0.4s ease-in-out,
       color 0.3s ease-in-out;
     animation:
-      bgColorChange 5s cubic-bezier(0, 0.45, 1, 0.45) 1s infinite,
-      bgShadow 5s infinite;
+      bgColorChange 3s cubic-bezier(0, 0.45, 1, 0.45) 1s infinite,
+      bgShadow 3s infinite;
     animation-fill-mode: forwards;
   }
 
   .bg-button:hover {
-    box-shadow: 0 0 7px #5cda43;
+    box-shadow: 0 0 7px #68e64f;
     color: white;
     animation:
       bgColorHover 5s linear infinite,
@@ -46,19 +45,19 @@ import TextArea from "./textarea.astro";
 
   @keyframes bgColorChange {
     0% {
-      background: #5cda43; /* Verde oscuro */
+      background: #68e64f; /* Verde oscuro */
     }
     25% {
-      background: #5cda43; /* Regresa a negro */
+      background: #68e64f; /* Regresa a negro */
     }
     50% {
-      background: #41af2b; /* Verde claro */
+      background: #a2f891; /* Verde claro */
     }
     75% {
-      background: #5cda43; /* Regresa a negro */
+      background: #68e64f; /* Regresa a negro */
     }
     100% {
-      background: #5cda43; /* Regresa a negro */
+      background: #68e64f; /* Regresa a negro */
     }
   }
 
@@ -79,19 +78,19 @@ import TextArea from "./textarea.astro";
 
   @keyframes bgShadow {
     0% {
-      box-shadow: 0 0 7px #5cda43;
+      box-shadow: 0 0 7px #7eff64;
     }
     25% {
-      box-shadow: 0 0 7px #5cda43;
+      box-shadow: 0 0 8px #7eff64;
     }
     50% {
-      box-shadow: 0 0 7px #5cda43;
+      box-shadow: 0 0 10px #a2f891;
     }
     75% {
-      box-shadow: 0 0 14px #41af2b;
+      box-shadow: 0 0 8px #7eff64;
     }
     100% {
-      box-shadow: 0 0 7px #5cda43;
+      box-shadow: 0 0 7px #7eff64;
     }
   }
 

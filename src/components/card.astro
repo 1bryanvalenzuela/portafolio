@@ -26,7 +26,7 @@ const imgSrc = `/${img}`;
         {
           tagsArray.map((tag) => (
             <span class="rounded-full bg-tag p-1 leading-none">
-              <span class="text-white px-1 text-sm md:text-md font-semibold">
+              <span class="text-primary px-1 text-sm md:text-md font-semibold">
                 {tag}
               </span>
             </span>
@@ -39,7 +39,8 @@ const imgSrc = `/${img}`;
 
 <style>
   .bg-tag {
-    background: linear-gradient(175deg, #5cda43 20%, #3fa72b 120%);
+    background: linear-gradient(175deg, #7eff64 20%, #68e64f 120%);
+    filter: saturate(75%);
   }
 
   .border-card {
