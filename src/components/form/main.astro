@@ -15,7 +15,7 @@ import TextArea from "./textarea.astro";
     <Label id="email" type="email" placeholder="Correo" />
     <TextArea id="content" placeholder="Mensaje" />
     <button
-      class="bg-button w-[50%] border-green-400 shadow-sm rounded-md ubuntu-regular font-semibold hover:text-green-50 cursor-pointer transition-all"
+      class="bg-button w-[50%] border-green-400 shadow-sm rounded-md ubuntu-regular font-semibold cursor-pointer py-0.5"
       >Enviar</button
     >
   </div>
@@ -23,6 +23,90 @@ import TextArea from "./textarea.astro";
 
 <style>
   .bg-button {
-    background: linear-gradient(0deg, #257e13 -20%, #63c74f 80%);
+    background: #5cda43;
+    color: black;
+    transition:
+      background 0.4s ease-in-out,
+      box-shadow 0.4s ease-in-out,
+      color 0.3s ease-in-out;
+    animation:
+      bgColorChange 5s cubic-bezier(0, 0.45, 1, 0.45) 1s infinite,
+      bgShadow 5s infinite;
+    animation-fill-mode: forwards;
+  }
+
+  .bg-button:hover {
+    box-shadow: 0 0 7px #5cda43;
+    color: white;
+    animation:
+      bgColorHover 5s linear infinite,
+      bgShadowHover 5s infinite;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes bgColorChange {
+    0% {
+      background: #5cda43; /* Verde oscuro */
+    }
+    25% {
+      background: #5cda43; /* Regresa a negro */
+    }
+    50% {
+      background: #41af2b; /* Verde claro */
+    }
+    75% {
+      background: #5cda43; /* Regresa a negro */
+    }
+    100% {
+      background: #5cda43; /* Regresa a negro */
+    }
+  }
+
+  @keyframes bgColorHover {
+    20% {
+      background: #16c98d; /* Verde oscuro */
+    }
+    40% {
+      background: #2d00cf; /* Verde claro */
+    }
+    60% {
+      background: #3f063f; /* Regresa a negro */
+    }
+    80% {
+      background: black; /* Regresa a negro */
+    }
+  }
+
+  @keyframes bgShadow {
+    0% {
+      box-shadow: 0 0 7px #5cda43;
+    }
+    25% {
+      box-shadow: 0 0 7px #5cda43;
+    }
+    50% {
+      box-shadow: 0 0 7px #5cda43;
+    }
+    75% {
+      box-shadow: 0 0 14px #41af2b;
+    }
+    100% {
+      box-shadow: 0 0 7px #5cda43;
+    }
+  }
+
+  @keyframes bgShadowHover {
+    20% {
+      box-shadow: 0 0 7px #16c98d; /* Verde oscuro */
+    }
+    40% {
+      box-shadow: 0 0 7px #2d00cf; /* Verde claro */
+    }
+    60% {
+      box-shadow: 0 0 7px #3f063f; /* Regresa a negro */
+    }
+    80% {
+      box-shadow: 0 0 7px black; /* Regresa a negro */
+    }
   }
 </style>

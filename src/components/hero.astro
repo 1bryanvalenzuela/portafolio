@@ -5,7 +5,7 @@ import img from "../assets/image.webp";
 
 <div
   id="inicio"
-  class="relative flex flex-col w-full h-[65vh] md:h-[55vh] items-center justify-center bg-secondary transition-bg shadow-bottom overflow-hidden"
+  class="relative flex flex-col w-full min-h-[400px] h-[65%] md:min-h-[450px] md:h-[50%] items-center justify-center bg-secondary transition-bg shadow-bottom overflow-hidden"
 >
   <div class="logo-background"></div>
   <div class="absolute pt-[11.5vh] z-2">
@@ -70,20 +70,22 @@ import img from "../assets/image.webp";
 </style>
 
 <script>
-  const jumbo = document.querySelector(".jumbo");
+  const jumbo = document.querySelector(".jumbo") as HTMLElement;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          jumbo.style.animationPlayState = "paused"; // Pausa la animación
-        } else {
-          jumbo.style.animationPlayState = "running"; // Reanuda la animación
-        }
-      });
-    },
-    { threshold: 0.1 } // Detecta cuando al menos el 10% del elemento está visible
-  );
+  if (jumbo) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            jumbo.style.animationPlayState = "paused"; // Pausa la animación
+          } else {
+            jumbo.style.animationPlayState = "running"; // Reanuda la animación
+          }
+        });
+      },
+      { threshold: 0.1 } // Detecta cuando al menos el 10% del elemento está visible
+    );
 
-  observer.observe(jumbo);
+    observer.observe(jumbo);
+  }
 </script>

@@ -25,7 +25,7 @@ const imgSrc = `/${img}`;
       <div class="flex flex-wrap gap-2 justify-end items-end mt-auto">
         {
           tagsArray.map((tag) => (
-            <span class="rounded-full bg-secondary p-1 leading-none">
+            <span class="rounded-full bg-tag p-1 leading-none">
               <span class="text-white px-1 text-sm md:text-md font-semibold">
                 {tag}
               </span>
@@ -38,6 +38,10 @@ const imgSrc = `/${img}`;
 </a>
 
 <style>
+  .bg-tag {
+    background: linear-gradient(175deg, #5cda43 20%, #3fa72b 120%);
+  }
+
   .border-card {
     position: relative;
     border: 3px solid transparent;
@@ -48,23 +52,25 @@ const imgSrc = `/${img}`;
 
   .border-card:hover {
     border: 3px solid black;
-    animation: borderColorChange 5s linear infinite;
+    animation:
+      borderColorChange 5s linear infinite,
+      bgShadowHover 5s infinite;
   }
 
   @keyframes borderColorChange {
-    10% {
+    5% {
       border-color: black; /* Verde oscuro */
     }
-    20% {
+    25% {
       border-color: rgb(22, 201, 141); /* Verde claro */
     }
-    50% {
+    45% {
       border-color: rgb(45, 0, 207); /* Rojo oscuro */
     }
-    70% {
+    65% {
       border-color: rgb(63, 6, 63); /* Regresa a negro */
     }
-    90% {
+    95% {
       border-color: black; /* Regresa a negro */
     }
   }
