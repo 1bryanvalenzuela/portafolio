@@ -10,10 +10,24 @@ import TextArea from "./textarea.astro";
       <span class="font-bold text-color-primary">contactame!</span>
     </h2>
   </div>
-  <div class="flex basis-1/2 flex-col justify-center gap-8 px-2">
-    <Label id="name" type="text" placeholder="Nombre" />
-    <Label id="email" type="email" placeholder="Correo" />
-    <TextArea id="content" placeholder="Mensaje" />
+  <div class="flex basis-1/2 flex-col justify-center gap-6 px-2">
+    <Label
+      id="name"
+      type="text"
+      label="Nombre"
+      placeholder="Nombre y apellido"
+    />
+    <Label
+      id="email"
+      type="email"
+      label="Correo electrónico"
+      placeholder="nombre@ejemplo.com"
+    />
+    <TextArea
+      id="content"
+      label="Mensaje"
+      placeholder="Escribe aqui tu mensaje"
+    />
     <button
       class="bg-button w-[50%] border-green-400 shadow-sm rounded-md ubuntu-regular text-primary font-semibold cursor-pointer py-0.5"
       >Enviar</button

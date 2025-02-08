@@ -32,15 +32,15 @@ const projectsArray = Object.entries(projects);
         Bryan Valenzuela
       </h1>
       <p class="md:text-lg ubuntu-regular text-justify z-2">
-        Ingeniero en Negocios Internacionales, especialista en gestionar la
-        tecnología y los datos, para hacerlos más eficientes. Con experiencia en
-        desarrollo web, confección y gestión de bases de datos, y soporte
-        informático.
+        Especialista en tecnología y gestión de datos para brindar soporte a la
+        toma de decisiones. Licenciado en Ingeniería en Negocios Internacionales
+        y experiencia en desarrollo web, desarrollo y administración de bases de
+        datos y soporte informático.
       </p>
       <p class="md:text-lg ubuntu-regular text-justify z-3">
-        En general, ofrezco análisis de datos estadísticos, creación de bases de
-        datos desde cero, desarrollo funcional y visual de sitios web, y
-        asesoría tecnológica para hacer más eficientes los procesos comerciales.
+        En general, puedo proporcionar análisis de datos estadísticos, creación
+        de bases de datos, desarrollo funcional y visual de sitios web, y
+        servicios de consultoria para mejorar los procesos de negocio.
       </p>
     </div>
     <div
@@ -69,7 +69,7 @@ const projectsArray = Object.entries(projects);
           tags={project.tags}
           link={project.link}
         >
-          <p class="text-justify">{project.content}</p>
+          {project.content}
         </Card>
       ))
     }

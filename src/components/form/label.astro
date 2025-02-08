@@ -1,15 +1,14 @@
 ---
-const { type, id, placeholder } = Astro.props;
+const { type, id, label, placeholder } = Astro.props;
 ---
 
-<label
-  for={id}
-  class="flex rounded-md border bg-white border-gray-200 shadow-sm focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600"
->
+<div>
+  <label for={id} class="block text-xs font-medium text-gray-600">{label}</label
+  >
   <input
     type={type}
     id={id}
-    class="w-full peer ubuntu-regular border-none bg-transparent focus:border-transparent focus:outline-none focus:ring-0 px-4"
+    class="w-full mt-0.5 py-1 px-2 bg-white w-full rounded-md focus:outline-none shadow-sm text-sm"
     placeholder={placeholder}
   />
-</label>
+</div>
