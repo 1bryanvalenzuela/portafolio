@@ -8,6 +8,10 @@ const { type, id, label, placeholder } = Astro.props;
   <input
     type={type}
     id={id}
+    name={id}
+    required
+    minlength={4}
+    maxlength={35}
     class="w-full mt-0.5 py-1 px-2 bg-white w-full rounded-md focus:outline-none shadow-sm text-sm"
     placeholder={placeholder}
   />

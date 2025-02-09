@@ -3,7 +3,11 @@ import Label from "./label.astro";
 import TextArea from "./textarea.astro";
 ---
 
-<form class="flex flex-col md:flex-row justify-center gap-8 py-15">
+<form
+  id="solicitud"
+  method="POST"
+  class="flex flex-col md:flex-row justify-center gap-8 py-15"
+>
   <div class="flex basis-1/2 items-center px-2">
     <h2 class="ubuntu-regular text-xl md:text-2xl text-prettier">
       Si necesitas de algún servicio relacionado a la informatica y/o negocios,
@@ -24,16 +28,57 @@ import TextArea from "./textarea.astro";
       placeholder="nombre@ejemplo.com"
     />
     <TextArea
-      id="content"
+      id="message"
       label="Mensaje"
       placeholder="Escribe aqui tu mensaje"
     />
     <button
+      id="enviar"
+      type="submit"
       class="bg-button w-[50%] border-green-400 shadow-sm rounded-md ubuntu-regular text-primary font-semibold cursor-pointer py-0.5"
       >Enviar</button
     >
   </div>
 </form>
+
+<script>
+  import { actions } from "astro:actions";
+
+  const form = document.querySelector("#solicitud") as HTMLFormElement;
+  const button = document.querySelector("#enviar") as HTMLButtonElement;
+  const labelName = document.querySelector("#name") as HTMLInputElement;
+  const labelEmail = document.querySelector("#email") as HTMLInputElement;
+  const labelMessage = document.querySelector("#message") as HTMLInputElement;
+
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        const { data, error } = await actions.sendMessage(formData);
+
+        if (error) {
+          console.error("Error:", error);
+        } else {
+          if (button) {
+            button.textContent = "Enviado";
+            button.classList.add("bg-button-sent");
+            button.classList.remove("bg-button", "cursor-pointer");
+            button.disabled = true;
+            labelName.disabled = true;
+            labelEmail.disabled = true;
+            labelMessage.disabled = true;
+          }
+          console.log("Exito:", data);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  }
+</script>
 
 <style>
   .bg-button {
@@ -46,6 +91,13 @@ import TextArea from "./textarea.astro";
       bgColorChange 3s cubic-bezier(0, 0.45, 1, 0.45) 1s infinite,
       bgShadow 3s infinite;
     animation-fill-mode: forwards;
+  }
+
+  .bg-button-sent {
+    background: #94cf88;
+    box-shadow:
+      inset -10px 10px 6px -15px rgba(255, 255, 255, 0.4),
+      inset 0 -10px 20px -10px rgba(0, 0, 0, 0.25);
   }
 
   .bg-button:hover {

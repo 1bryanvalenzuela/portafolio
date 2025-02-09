@@ -7,6 +7,10 @@ const { id, label, placeholder } = Astro.props;
   >
   <textarea
     id={id}
+    name={id}
+    required
+    minlength={4}
+    maxlength={500}
     class="w-full mt-1 ubuntu-regular rounded-md border-gray-200 shadow-sm bg-white resize-none py-1 px-2 text-sm focus:outline-none"
     rows={4}
     placeholder={placeholder}></textarea>

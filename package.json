@@ -19,9 +19,13 @@
     "@types/react-dom": "^19.0.3",
     "astro": "^5.1.9",
     "autoprefixer": "^10.4.20",
+    "nodemailer": "^6.10.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-github-calendar": "^4.5.4",
     "tailwindcss": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.17"
   }
 }
