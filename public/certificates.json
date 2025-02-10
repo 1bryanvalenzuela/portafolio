@@ -1,0 +1,37 @@
+{
+    "Data Analysis with Tableau": {
+        "link": "https://www.coursera.org/verify/9FEDNFDZHW8J",
+        "date": "Junio, 2024",
+        "autor": "Tableau"
+    },
+    "Intermediate PostgreSQL": {
+        "link": "https://www.coursera.org/verify/YCPG797TFNZB",
+        "date": "Junio, 2024",
+        "autor": "University of Michigan, Charles Severance"
+    },
+    "Python for Data Science, AI & Development": {
+        "link": "https://www.coursera.org/verify/ER2E4ZM5LXFY",
+        "date": "Junio, 2024",
+        "autor": "IBM, Joseph Santarcangelo"
+    },
+    "Intermediate Machine Learning": {
+        "link": "https://1bryanvalenzuela.github.io/files/kaggleintermediateml.png",
+        "date": "Abril, 2024",
+        "autor": "Kaggle, Alexis Cook"
+    },
+    "Intro to Machine Learning": {
+        "link": "https://1bryanvalenzuela.github.io/files/kaggleintroml.png",
+        "date": "Abril, 2024",
+        "autor": "Kaggle, Dan Becker, Alexis Cook"
+    },
+    "Time Series": {
+        "link": "https://1bryanvalenzuela.github.io/files/kagglets.png",
+        "date": "Mayo, 2024",
+        "autor": "Kaggle, Ryan Holbrook, Alexis Cook"
+    },
+    "Data Analysis with Python": {
+        "link": "https://www.freecodecamp.org/certification/1BryanValenzuela/data-analysis-with-python-v7",
+        "date": "Marzo, 2023",
+        "autor": "freeCodeCamp, Quincy Larson"
+    }
+}

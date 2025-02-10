@@ -2,7 +2,7 @@
 const { href } = Astro.props;
 ---
 
-<a class="link" href={href}><slot /></a>
+<a class="link" target="_blank" rel="nofollow" href={href}><slot /></a>
 
 <style>
   .link {
@@ -36,16 +36,16 @@ const { href } = Astro.props;
 
   @keyframes textColorChange {
     30% {
-      color: #16c98d; /* Verde oscuro */
+      color: #16c98d;
     }
     50% {
-      color: #303eff; /* Verde claro */
+      color: #303eff;
     }
     70% {
-      color: #ff3bff; /* Regresa a negro */
+      color: #ff3bff;
     }
     90% {
-      color: #236017; /* Regresa a negro */
+      color: #236017;
     }
   }
 </style>

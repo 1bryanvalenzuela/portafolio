@@ -5,10 +5,10 @@ import img from "../assets/image.webp";
 
 <div
   id="inicio"
-  class="relative flex flex-col w-full min-h-[350px] h-[65%] md:min-h-[450px] md:h-[50%] items-center justify-center bg-secondary transition-bg shadow-bottom overflow-hidden"
+  class="relative flex flex-col w-full min-h-[350px] h-[55%] md:min-h-[450px] md:h-[50%] items-center justify-center bg-secondary transition-bg shadow-bottom overflow-hidden"
 >
   <div class="logo-background"></div>
-  <div class="absolute pt-[11.5vh] z-2">
+  <div class="absolute pt-[4vh] md:pt-[11.5vh] z-2">
     <div
       class="w-55 h-55 md:w-65 md:h-65 bg-primary rounded-full p-2 md:p-2.5 contenedor-style"
     >
@@ -78,13 +78,13 @@ import img from "../assets/image.webp";
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) {
-            jumbo.style.animationPlayState = "paused"; // Pausa la animación
+            jumbo.style.animationPlayState = "paused";
           } else {
-            jumbo.style.animationPlayState = "running"; // Reanuda la animación
+            jumbo.style.animationPlayState = "running";
           }
         });
       },
-      { threshold: 0.1 } // Detecta cuando al menos el 10% del elemento está visible
+      { threshold: 0.1 }
     );
 
     observer.observe(jumbo);

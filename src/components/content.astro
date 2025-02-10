@@ -3,17 +3,20 @@ import Contributions from "./gitcontrib";
 import Form from "./form/main.astro";
 import Enlaces from "./links/main.astro";
 import Card from "./card.astro";
+import Certificados from "./certs.astro";
 import projects from "../../public/projects.json";
+import certificates from "../../public/certificates.json";
 
+const certificatesArray = Object.entries(certificates);
 const projectsArray = Object.entries(projects);
 
 // Info via JSON (?)
 // Proyectos via JSON /
-// Formulario para contactar
+// Formulario para contactar /
 // Animación en los LINKS /
-// Animación. Pagina separada para proyectos X
-// Certificados al final
-// Animación escritura en nombre /
+// Certificados al final /
+// Revisar espaciados entre las divisiones de contenido (/Proyectos, /Contacto, /Otros)
+// Agregar animación al dropdown del header ?
 ---
 
 <div class="relative flex w-full bg-primary">
@@ -32,10 +35,10 @@ const projectsArray = Object.entries(projects);
         Bryan Valenzuela
       </h1>
       <p class="md:text-lg ubuntu-regular text-justify z-2">
-        Especialista en tecnología y gestión de datos para brindar soporte a la
-        toma de decisiones. Licenciado en Ingeniería en Negocios Internacionales
-        y experiencia en desarrollo web, desarrollo y administración de bases de
-        datos y soporte informático.
+        Especialista en tecnología y gestión de datos con el fin de brindar
+        soporte a la toma de decisiones. Licenciado en Ingeniería en Negocios
+        Internacionales y experiencia en desarrollo web, desarrollo y
+        administración de bases de datos y soporte informático.
       </p>
       <p class="md:text-lg ubuntu-regular text-justify z-3">
         En general, puedo proporcionar análisis de datos estadísticos, creación
@@ -88,6 +91,32 @@ const projectsArray = Object.entries(projects);
       /Contacto
     </h2>
     <Form />
+  </div>
+</div>
+<div id="otros" class="flex justify-center bg-primary pt-15 md:pt-30">
+  <div class="w-full px-8 md:px-0 md:w-[720px]">
+    <h2
+      class="flex z-2 ubuntu-mono-regular text-2xl md:text-4xl font-bold text-color-primary transition-colors md:mx-0"
+    >
+      /Otros
+    </h2>
+    <div class="flex flex-col gap-8 pb-30">
+      <h3
+        class="flex z-2 ubuntu-mono-regular text-xl font-bold text-color-primary transition-colors md:mx-0 pt-12"
+      >
+        Certificados
+      </h3>
+      {
+        certificatesArray.map(([id, certificate]) => (
+          <Certificados
+            title={id}
+            link={certificate.link}
+            date={certificate.date}
+            autor={certificate.autor}
+          />
+        ))
+      }
+    </div>
   </div>
 </div>
 

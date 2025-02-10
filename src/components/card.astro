@@ -7,6 +7,8 @@ const imgSrc = `/${img}`;
 
 <a
   href={link}
+  target="_blank"
+  rel="nofollow"
   class="flex flex-col border-card rounded-lg p-2 mx-8 md:m-0 contenedor-style transition-all"
 >
   <div class="flex flex-col md:flex-row gap-4 md:gap-2">
@@ -63,19 +65,19 @@ const imgSrc = `/${img}`;
 
   @keyframes borderColorChange {
     5% {
-      border-color: #4db637; /* Verde oscuro */
+      border-color: #4db637;
     }
     27% {
-      border-color: #16c98d; /* Verde claro */
+      border-color: #16c98d;
     }
     47% {
-      border-color: #303eff; /* Rojo oscuro */
+      border-color: #303eff;
     }
     67% {
-      border-color: #ff3bff; /* Regresa a negro */
+      border-color: #ff3bff;
     }
     95% {
-      border-color: #4db637; /* Regresa a negro */
+      border-color: #4db637;
     }
   }
 </style>

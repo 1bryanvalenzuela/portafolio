@@ -1,0 +1,17 @@
+---
+const { title, link, date, autor } = Astro.props;
+---
+
+<div class="flex flex-col md:flex-row justify-between text-color-primary">
+  <div class="flex flex-col justify-end">
+    <a
+      class="ubuntu-mono-regular text-md font-medium hover:underline hover:text-black"
+      target="_blank"
+      rel="nofollow"
+      href={link}>{title}</a
+    >
+  </div>
+  <div class="flex flex-col justify-end">
+    <p class="ubuntu-regular text-sm">{date} - {autor}</p>
+  </div>
+</div>
