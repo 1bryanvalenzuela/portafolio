@@ -1,8 +1,9 @@
 ---
 const { img, title, tags, link } = Astro.props;
 
+import Image from "astro/components/Image.astro";
 const tagsArray = Object.values(tags);
-const imgSrc = `/${img}`;
+const images = import.meta.glob("../assets/*");
 ---
 
 <a
@@ -12,8 +13,8 @@ const imgSrc = `/${img}`;
   class="flex flex-col border-card rounded-lg p-2 mx-8 md:m-0 contenedor-style transition-all"
 >
   <div class="flex flex-col md:flex-row gap-4 md:gap-2">
-    <img
-      src={imgSrc}
+    <Image
+      src={img ? images[img]() : img}
       alt=`${title} página`
       loading="lazy"
       class="rounded-lg h-auto w-full max-w-70 md:w-auto md:max-h-40 mx-auto md:mx-0"
