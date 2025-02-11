@@ -6,7 +6,7 @@ const theme = {
 
 const Contributions = () => {
   return (
-    <div>
+    <div className="ubuntu-regular">
       <GitHubCalendar
         username="1bryanvalenzuela"
         colorScheme="light"
