@@ -19,6 +19,7 @@
 
   .linkheader {
     transition: color 0.3s ease-in-out;
+    border-color: #236017;
   }
 
   .linkheader:hover {

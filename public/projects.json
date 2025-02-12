@@ -21,9 +21,9 @@
         "link": "https://github.com/1bryanvalenzuela/Comparador-Supermercados-Chile"
     },
     "otros": {
-        "title": "Github - Proyectos de análisis",
+        "title": "Github - Proyectos de análisis de datos",
         "img": "../assets/github.webp",
-        "content": "Analisis de datos, scrapping, scripts, y muchos otros proyectos aqui! aaaaaaaa",
+        "content": "Más de 10 proyectos y análisis de datos en diferentes áreas. Aplicación de técnicas de predicción, regresión lineal, machine learning y herramientas de procesamiento de lenguaje natural para encontrar insights y mejorar la toma de decisiones",
         "tags": ["Python", "Jupyter Notebook", "Power BI"],
         "link": "https://github.com/1bryanvalenzuela"
     }
