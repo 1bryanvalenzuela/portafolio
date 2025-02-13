@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.1.6",
-    "@astrojs/vercel": "^8.0.6",
+    "@astrojs/vercel": "^8.0.7",
     "@fontsource-variable/ubuntu-sans": "^5.1.1",
     "@fontsource-variable/ubuntu-sans-mono": "^5.1.1",
     "@tailwindcss/vite": "^4.0.0",
