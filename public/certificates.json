@@ -15,17 +15,17 @@
         "autor": "IBM, Joseph Santarcangelo"
     },
     "Intermediate Machine Learning": {
-        "link": "https://1bryanvalenzuela.github.io/files/kaggleintermediateml.png",
+        "link": "/kaggleintermediateml.png",
         "date": "Abril, 2024",
         "autor": "Kaggle, Alexis Cook"
     },
     "Intro to Machine Learning": {
-        "link": "https://1bryanvalenzuela.github.io/files/kaggleintroml.png",
+        "link": "/kaggleintroml.png",
         "date": "Abril, 2024",
         "autor": "Kaggle, Dan Becker, Alexis Cook"
     },
     "Time Series": {
-        "link": "https://1bryanvalenzuela.github.io/files/kagglets.png",
+        "link": "/kagglets.png",
         "date": "Mayo, 2024",
         "autor": "Kaggle, Ryan Holbrook, Alexis Cook"
     },
