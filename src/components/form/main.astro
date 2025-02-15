@@ -89,7 +89,7 @@ import TextArea from "./textarea.astro";
       box-shadow 0.4s ease-in-out,
       color 0.3s ease-in-out;
     animation:
-      bgColorChange 3s cubic-bezier(0, 0.45, 1, 0.45) 1s infinite,
+      bgColorChange 3s cubic-bezier(0, 0.45, 1, 0.45) 0.5s infinite,
       bgShadow 3s infinite;
     animation-fill-mode: forwards;
   }
@@ -109,8 +109,8 @@ import TextArea from "./textarea.astro";
     box-shadow: 0 0 7px #68e64f;
     color: white;
     animation:
-      bgColorHover 5s linear infinite,
-      bgShadowHover 5s infinite;
+      bgColorHover 4s linear infinite,
+      bgShadowHover 4s infinite;
     animation-fill-mode: forwards;
   }
 
@@ -133,7 +133,7 @@ import TextArea from "./textarea.astro";
   }
 
   @keyframes bgColorHover {
-    20% {
+    15% {
       background: #16c98d; /* Verde oscuro */
     }
     40% {

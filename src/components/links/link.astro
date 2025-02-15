@@ -26,7 +26,7 @@ const { href } = Astro.props;
   }
 
   .link:hover {
-    animation: textColorChange 4s linear infinite;
+    animation: textColorChange 4s cubic-bezier(0.1, 0, 0.8, 1) infinite;
   }
 
   .link:hover::after {
@@ -35,13 +35,13 @@ const { href } = Astro.props;
   }
 
   @keyframes textColorChange {
-    30% {
+    10% {
       color: #16c98d;
     }
-    50% {
+    35% {
       color: #303eff;
     }
-    70% {
+    75% {
       color: #ff3bff;
     }
     90% {
