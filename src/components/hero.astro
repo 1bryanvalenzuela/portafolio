@@ -13,9 +13,11 @@ const { language } = Astro.props;
   class="relative flex w-full items-center justify-center bg-secondary transition-bg shadow-bottom overflow-hidden"
 >
   <div class="logo-background"></div>
-  <div class="relative w-[90%] pt-[5vh] md:pt-[14vh] z-2 justify-center items-center">
+  <div class="relative w-full justify-center items-center">
+    <div class="flex md:hidden w-full justify-start py-9 ps-9 z-4"><a href={( language == "es" ? "/en" : "/" )} class="inline-flex z-20 font-semibold pe-2 text-sm text-green-950 ubuntu-mono-regular hover:text-black hover:underline pe-25 sm:wrap">
+      <Image class="w-auto h-4 pe-2 saturate-70" src={( language == "es" ? us : es )} alt={( language == "es" ? "USA Flag" : "Spanish Flag" )} />{( language == "es" ? "Go to english version" : "Cambiar a versión en español" )}</a></div>
     <div
-      class="w-55 h-55 md:w-65 md:h-65 mx-auto bg-primary rounded-full p-2 md:p-2.5 contenedor-style"
+      class="w-55 h-55 md:w-65 md:h-65 mx-auto bg-primary rounded-full p-2 md:p-2.5 md:mt-25 contenedor-style"
     >
       <Image
         src={img}
@@ -38,8 +40,8 @@ const { language } = Astro.props;
         ></span>
       </span>
     </div>
-    <div class="flex w-full justify-end text-end pb-2"><a href={( language == "es" ? "/en" : "/" )} class="inline-flex font-semibold pe-2 text-sm text-green-950 ubuntu-mono-regular hover:text-black hover:underline">
-      {( language == "es" ? "Go to english version" : "Cambiar a versión español" )}<Image class="w-auto h-4 ps-2 saturate-70" src={( language == "es" ? us : es )} alt={( language == "es" ? "USA Flag" : "Spanish Flag" )} /></a></div>
+    <div class="hidden md:flex w-full justify-end pb-2 pe-8"><a href={( language == "es" ? "/en" : "/" )} class="inline-flex font-semibold pe-2 text-sm text-green-950 ubuntu-mono-regular hover:text-black hover:underline">
+      {( language == "es" ? "Go to english version" : "Cambiar a versión en español" )}<Image class="w-auto h-4 ps-2 saturate-70" src={( language == "es" ? us : es )} alt={( language == "es" ? "USA Flag" : "Spanish Flag" )} /></a></div>
   </div>
 </div>
 
