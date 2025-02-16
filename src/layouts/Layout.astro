@@ -4,10 +4,12 @@ import "../styles/global.css";
 
 import "@fontsource-variable/ubuntu-sans-mono";
 import "@fontsource-variable/ubuntu-sans";
+
+const { language } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={language}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -47,7 +49,7 @@ import "@fontsource-variable/ubuntu-sans";
     />
   </head>
   <body>
-    <Header />
+    <Header language={language} />
     <slot />
   </body>
 </html>

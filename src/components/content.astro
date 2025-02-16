@@ -4,13 +4,16 @@ import Form from "./form/main.astro";
 import Enlaces from "./links/main.astro";
 import Card from "./card.astro";
 import Certificados from "./certs.astro";
+
 import projects from "../../public/projects.json";
 import certificates from "../../public/certificates.json";
+import info from "../../public/info.json";
+
+const { language } = Astro.props;
 
 const certificatesArray = Object.entries(certificates);
 const projectsArray = Object.entries(projects);
 
-// Info via JSON (?)
 // Revisar espaciados entre las divisiones de contenido (/Proyectos, /Contacto, /Otros)
 ---
 
@@ -30,21 +33,16 @@ const projectsArray = Object.entries(projects);
         Bryan Valenzuela
       </h1>
       <p class="md:text-lg ubuntu-regular text-justify z-2">
-        Especialista en tecnología y gestión de datos con el fin de brindar
-        soporte a la toma de decisiones. Licenciado en Ingeniería en Negocios
-        Internacionales y experiencia en desarrollo web, desarrollo y
-        administración de bases de datos y soporte informático.
+        {(language == "es" ? info.es.p1 : info.en.p1)}
       </p>
       <p class="md:text-lg ubuntu-regular text-justify z-3">
-        En general, puedo proporcionar análisis de datos estadísticos, creación
-        de bases de datos, desarrollo funcional y visual de sitios web, y
-        servicios de consultoria para mejorar los procesos de negocio.
+        {(language == "es" ? info.es.p2 : info.en.p2)}
       </p>
     </div>
     <div
       class="w-full px-8 md:px-0 md:w-[720px] flex flex-col md:flex-row md:justify-between text-color-primary ubuntu-mono-regular text-xl md:text-2xl font-bold gap-8 z-3"
     >
-      <Enlaces />
+      <Enlaces language />
     </div>
   </div>
 </div>
@@ -56,7 +54,7 @@ const projectsArray = Object.entries(projects);
     <h2
       class="flex z-2 ubuntu-mono-regular text-2xl md:text-4xl font-bold text-color-primary transition-colors mx-8 md:mx-0"
     >
-      /Proyectos
+    {(language == "es" ? "/Proyectos" : "/Projects")}
     </h2>
     {
       projectsArray.map(([id, project]) => (
@@ -83,7 +81,7 @@ const projectsArray = Object.entries(projects);
     <h2
       class="flex z-2 ubuntu-mono-regular text-2xl md:text-4xl font-bold text-color-primary transition-colors md:mx-0"
     >
-      /Contacto
+    {(language == "es" ? "/Contacto" : "/Contact")}
     </h2>
     <Form />
   </div>
@@ -93,13 +91,13 @@ const projectsArray = Object.entries(projects);
     <h2
       class="flex z-2 ubuntu-mono-regular text-2xl md:text-4xl font-bold text-color-primary transition-colors md:mx-0"
     >
-      /Otros
+    {(language == "es" ? "/Otros" : "/Others")}
     </h2>
     <div class="flex flex-col gap-8 pb-30">
       <h3
         class="flex z-2 ubuntu-mono-regular text-xl font-bold text-color-primary transition-colors md:mx-0 pt-12"
       >
-        Certificados
+      {(language == "es" ? "Certificados" : "Certificates")}
       </h3>
       {
         certificatesArray.map(([id, certificate]) => (

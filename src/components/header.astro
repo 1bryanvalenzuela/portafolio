@@ -1,6 +1,8 @@
 ---
 import Image from "astro/components/Image.astro";
 import Menu from "../assets/menu.svg";
+
+const { language } = Astro.props;
 ---
 
 <nav
@@ -12,23 +14,23 @@ import Menu from "../assets/menu.svg";
     class="justify-center bg-primary rounded-lg md:rounded-full p-2.5 md:px-8 contenedor-style"
   >
     <button id="menu-button" class="block md:hidden">
-      <Image class="mx-auto cursor-pointer" src={Menu} alt="menu" />
+      <Image class="mx-auto cursor-pointer" src={Menu} alt="Icono Menu" />
     </button>
     <div
       id="menu-links"
       class="hidden md:flex flex-col md:flex-row gap-1 md:gap-8 text-color-primary ubuntu-mono-regular p-1 md:p-0 text-md md:text-lg font-bold"
     >
       <li class="pb-1 pe-2 border-b-1 md:border-b-0 md:p-0 text-color-primary">
-        <a href="#inicio" class="linkheader">/Inicio</a>
+        <a href="#inicio" class="linkheader">{( language == "es" ? "/Inicio" : "/Home" )}</a>
       </li>
       <li class="pb-1 pe-2 border-b-1 md:border-b-0 md:p-0 text-color-primary">
-        <a href="#projects" class="linkheader">/Proyectos</a>
+        <a href="#projects" class="linkheader">{( language == "es" ? "/Proyectos" : "/Projects" )}</a>
       </li>
       <li class="pb-1 pe-2 border-b-1 md:border-b-0 md:p-0 text-color-primary">
-        <a href="#contact" class="linkheader">/Contacto</a>
+        <a href="#contact" class="linkheader">{( language == "es" ? "/Contacto" : "/Contact" )}</a>
       </li>
       <li class="pe-2 md:p-0">
-        <a href="#otros" class="linkheader">/Otros</a>
+        <a href="#otros" class="linkheader">{( language == "es" ? "/Otros" : "/Others" )}</a>
       </li>
     </div>
   </ul>
