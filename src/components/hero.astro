@@ -2,10 +2,12 @@
 import { Image } from "astro:assets";
 import img from "../assets/image.webp";
 
-import us from "../assets/us.svg"
-import es from "../assets/es.svg"
+import us from "../assets/us.svg";
+import es from "../assets/es.svg";
 
 const { language } = Astro.props;
+
+const flag = language == "es" ? us : es;
 ---
 
 <div
@@ -15,8 +17,22 @@ const { language } = Astro.props;
   <div class="logo-background"></div>
   <div class="relative w-full justify-center items-center">
     <div class="flex md:hidden w-fit justify-start py-9 ps-8 z-4">
-      <a href={( language == "es" ? "/en" : "/" )} class="inline-flex z-4 font-semibold text-sm text-green-950 ubuntu-mono-regular hover:text-black hover:underline me-25 sm:wrap">
-      <Image class="w-auto h-4 pe-2 saturate-70" loading="eager" src={( language == "es" ? us : es )} alt={( language == "es" ? "USA Flag" : "Spanish Flag" )} />{( language == "es" ? "Go to english version" : "Cambiar a versión en español" )}</a></div>
+      <a
+        href={language == "es" ? "/en" : "/"}
+        class="inline-flex z-4 font-semibold text-sm text-green-950 ubuntu-mono-regular hover:text-black border-b-1 border-transparent hover:border-black me-25 sm:wrap"
+      >
+        <Image
+          class="w-auto h-4 pe-2 saturate-70"
+          loading="eager"
+          src={flag}
+          alt={language == "es" ? "USA Flag" : "Spanish Flag"}
+        />{
+          language == "es"
+            ? "Go to english version"
+            : "Cambiar a versión en español"
+        }</a
+      >
+    </div>
     <div
       class="w-55 h-55 md:w-65 md:h-65 mx-auto bg-primary rounded-full p-2 md:p-2.5 md:mt-25 contenedor-style"
     >
@@ -31,18 +47,34 @@ const { language } = Astro.props;
       <p
         class="font-bold pe-2 text-lg md:text-xl text-green-950 ubuntu-mono-regular"
       >
-        {( language == "es" ? "Disponible" : "Available" )}
+        {language == "es" ? "Disponible" : "Available"}
       </p>
       <span class="h-3 w-3 pointer-events-none mt-[2.5px]">
         <span
           class="animate-ping absolute inline-flex h-3 w-3 mt-1.5 rounded-full bg-green-800"
         ></span>
-        <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500 border border-green-800"
+        <span
+          class="relative inline-flex rounded-full h-3 w-3 bg-green-500 border border-green-800"
         ></span>
       </span>
     </div>
-    <div class="hidden md:flex w-full justify-end pb-2 pe-8"><a href={( language == "es" ? "/en" : "/" )} class="inline-flex font-semibold pe-2 text-sm text-green-950 ubuntu-mono-regular hover:text-black hover:underline">
-      {( language == "es" ? "Go to english version" : "Cambiar a versión en español" )}<Image class="w-auto h-4 ps-2 saturate-70" loading="eager" src={( language == "es" ? us : es )} alt={( language == "es" ? "USA Flag" : "Spanish Flag" )} /></a></div>
+    <div class="hidden md:flex w-full justify-end pb-2 pe-8">
+      <a
+        href={language == "es" ? "/en" : "/"}
+        class="inline-flex font-semibold text-sm text-green-950 ubuntu-mono-regular hover:text-black border-b-1 border-transparent hover:border-black"
+      >
+        {
+          language == "es"
+            ? "Go to english version"
+            : "Cambiar a versión en español"
+        }<Image
+          class="w-auto h-4 ps-2 saturate-70"
+          loading="eager"
+          src={flag}
+          alt={language == "es" ? "USA Flag" : "Spanish Flag"}
+        /></a
+      >
+    </div>
   </div>
 </div>
 

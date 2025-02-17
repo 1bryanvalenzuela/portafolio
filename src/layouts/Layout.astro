@@ -16,12 +16,18 @@ const { language } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Bryan Valenzuela | Análisis de datos y desarrollo web</title>
+    <title>
+      {
+        language == "es"
+          ? "Bryan Valenzuela | Análisis de datos y desarrollo web"
+          : "Bryan Valenzuela | Data analysis and web development"
+      }
+    </title>
     <meta
       name="description"
-      content="Análisis de datos estadísticos, creación
-        de bases de datos, desarrollo funcional y visual de sitios web, y
-        servicios de consultoria para mejorar los procesos de negocio."
+      content={language == "es"
+        ? "Especialista en tecnología y gestión de datos con el fin de brindar soporte a la toma de decisiones. Puedo ayudarte entregando servicios de análisis de datos, desarrollo web y consultoria para mejorar tus procesos de negocio."
+        : "Data management and programming specialist, bringing support to decision making. Can help you by providing data analysis, web development and consulting services to improve your business processes."}
     />
     <link rel="canonical" href="https://www.bryanvalenzuela.dev" />
     <meta property="og:title" content="Bryan Valenzuela" />
@@ -29,24 +35,28 @@ const { language } = Astro.props;
     <meta property="og:url" content="https://www.bryanvalenzuela.dev" />
     <meta
       property="og:image"
-      content="https://www.bryanvalenzuela.dev/ogimage.png"
+      content={language == "es" ? "/bvesimage.jpg" : "/bvenimage.jpg"}
     />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="800" />
-    <meta property="og:image:height" content="420" />
+    <meta property="og:image:type" content="image/jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta
       property="og:description"
-      content="Especialista en tecnología y gestión de datos con el fin de brindar soporte a la toma de decisiones."
+      content={language == "es"
+        ? "Especialista en tecnología y gestión de datos con el fin de brindar soporte a la toma de decisiones."
+        : "Data management and programming specialist, bringing support to decision making."}
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Bryan Valenzuela" />
     <meta
       name="twitter:description"
-      content="Especialista en tecnología y gestión de datos con el fin de brindar soporte a la toma de decisiones."
+      content={language == "es"
+        ? "Especialista en tecnología y gestión de datos con el fin de brindar soporte a la toma de decisiones."
+        : "Data management and programming specialist, bringing support to decision making."}
     />
     <meta
       name="twitter:image"
-      content="https://www.bryanvalenzuela.dev/ogimage.png"
+      content={language == "es" ? "/bvesimage.jpg" : "/bvenimage.jpg"}
     />
   </head>
   <body>

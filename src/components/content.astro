@@ -12,7 +12,8 @@ import info from "../../public/info.json";
 const { language } = Astro.props;
 
 const certificatesArray = Object.entries(certificates);
-const projectsArray = Object.entries(projects.es);
+const projectsArray =
+  language == "es" ? Object.entries(projects.es) : Object.entries(projects.en);
 
 // Revisar espaciados entre las divisiones de contenido (/Proyectos, /Contacto, /Otros)
 ---
@@ -33,10 +34,10 @@ const projectsArray = Object.entries(projects.es);
         Bryan Valenzuela
       </h1>
       <p class="md:text-lg ubuntu-regular text-justify z-2">
-        {(language == "es" ? info.es.p1 : info.en.p1)}
+        {language == "es" ? info.es.p1 : info.en.p1}
       </p>
       <p class="md:text-lg ubuntu-regular text-justify z-3">
-        {(language == "es" ? info.es.p2 : info.en.p2)}
+        {language == "es" ? info.es.p2 : info.en.p2}
       </p>
     </div>
     <div
@@ -54,7 +55,7 @@ const projectsArray = Object.entries(projects.es);
     <h2
       class="flex z-2 ubuntu-mono-regular text-2xl md:text-4xl font-bold text-color-primary transition-colors mx-8 md:mx-0"
     >
-    {(language == "es" ? "/Proyectos" : "/Projects")}
+      {language == "es" ? "/Proyectos" : "/Projects"}
     </h2>
     {
       projectsArray.map(([id, project]) => (
@@ -81,7 +82,7 @@ const projectsArray = Object.entries(projects.es);
     <h2
       class="flex z-2 ubuntu-mono-regular text-2xl md:text-4xl font-bold text-color-primary transition-colors md:mx-0"
     >
-    {(language == "es" ? "/Contacto" : "/Contact")}
+      {language == "es" ? "/Contacto" : "/Contact"}
     </h2>
     <Form language={language} />
   </div>
@@ -91,20 +92,20 @@ const projectsArray = Object.entries(projects.es);
     <h2
       class="flex z-2 ubuntu-mono-regular text-2xl md:text-4xl font-bold text-color-primary transition-colors md:mx-0"
     >
-    {(language == "es" ? "/Otros" : "/Others")}
+      {language == "es" ? "/Otros" : "/Others"}
     </h2>
     <div class="flex flex-col gap-8 pb-15 md:pb-30">
       <h3
         class="flex z-2 ubuntu-mono-regular text-xl font-bold text-color-primary transition-colors md:mx-0 pt-12"
       >
-      {(language == "es" ? "Certificados" : "Certificates")}
+        {language == "es" ? "Certificados" : "Certificates"}
       </h3>
       {
         certificatesArray.map(([id, certificate]) => (
           <Certificados
             title={id}
             link={certificate.link}
-            date={(language == "es" ? certificate.esdate : certificate.endate)}
+            date={language == "es" ? certificate.esdate : certificate.endate}
             autor={certificate.autor}
           />
         ))
