@@ -1,4 +1,4 @@
-{
+{ "es": { 
     "transportes nemo": {
         "title": "Transportes Nemo",
         "img": "../assets/transportes.webp",
@@ -27,4 +27,34 @@
         "tags": ["Python", "Jupyter Notebook", "Power BI"],
         "link": "https://github.com/1bryanvalenzuela"
     }
+ }, "en": {
+    "transportes nemo": {
+        "title": "Transportes Nemo",
+        "img": "../assets/transportes.webp",
+        "content": "Desarrollé el sitio web para una empresa de transporte. Usé Astro y React para la interfaz y formularios; ExpressJS y PostgreSQL para la creación del backend vía una RestAPI que maneja las solicitudes de la página.",
+        "tags": ["Astro", "React", "ExpressJS", "PostgreSQL"],
+        "link": "https://nemo-frontend-production.up.railway.app"
+    },
+    "mp reviews": {
+        "title": "MP Reviews",
+        "img": "../assets/mp.webp",
+        "content": "Creación de una aplicación para comentar e interactuar con las opiniones de juegos multijugador. Usé AWS y sus servicios para gestionar las funciones, base de datos, permisos y autentificación; React para la interfaz del usuario y conectar con las bases de datos de DynamoDB y PostgreSQL.",
+        "tags": ["React", "AWS", "NoSQL", "PostgreSQL"],
+        "link": "https://main.d9yrixme2n119.amplifyapp.com"
+    },
+    "dashboard": {
+        "title": "Dashboard - Productos chilenos",
+        "img": "../assets/dashboard.webp",
+        "content": "Creación de una interfaz interactiva en PowerBI con precios, información y filtros de productos chilenos. Usé Python para crear un script que automatiza la obtención de los datos de los supermercados",
+        "tags": ["Python", "Power BI"],
+        "link": "https://github.com/1bryanvalenzuela/Comparador-Supermercados-Chile"
+    },
+    "otros": {
+        "title": "Github - Proyectos de análisis de datos",
+        "img": "../assets/github.webp",
+        "content": "Más de 10 proyectos y análisis de datos en diferentes áreas. Aplicación de técnicas de predicción, regresión lineal, machine learning y herramientas de procesamiento de lenguaje natural para encontrar insights y mejorar la toma de decisiones",
+        "tags": ["Python", "Jupyter Notebook", "Power BI"],
+        "link": "https://github.com/1bryanvalenzuela"
+    }
+ }
 }

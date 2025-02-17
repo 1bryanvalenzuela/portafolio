@@ -1,6 +1,8 @@
 ---
 import Label from "./label.astro";
 import TextArea from "./textarea.astro";
+
+const { language } = Astro.props;
 ---
 
 <form
@@ -10,34 +12,38 @@ import TextArea from "./textarea.astro";
 >
   <div class="flex basis-1/2 items-center px-2">
     <h2 class="ubuntu-regular text-xl md:text-2xl text-prettier">
-      Si necesitas de algún servicio relacionado con la informática y/o
-      negocios,
-      <span class="font-bold text-color-primary">¡contáctame!</span>
+      {(language == "es" ? "Si necesitas de algún servicio relacionado con la informática y/o negocios,"
+      :
+      "Data Analyst and International Business Engineer")}
+      <span class="font-bold text-color-primary">
+        {(language == "es" ? "¡contáctame!"
+      :
+      "Data Analyst and International Business Engineer")}</span>
     </h2>
   </div>
   <div class="flex basis-1/2 flex-col justify-center gap-6 px-2">
     <Label
       id="name"
       type="text"
-      label="Nombre"
-      placeholder="Nombre y apellido"
+      label={(language == "es" ? "Nombre" : "Name")}
+      placeholder={(language == "es" ? "Nombre y apellido" : "First name and last name")}
     />
     <Label
       id="email"
       type="email"
-      label="Correo electrónico"
-      placeholder="nombre@ejemplo.com"
+      label={(language == "es" ? "Correo electrónico" : "Email")}
+      placeholder={(language == "es" ? "nombre@ejemplo.com" : "name@example.com")}
     />
     <TextArea
       id="message"
-      label="Mensaje"
-      placeholder="Escribe tu mensaje aquí"
+      label={(language == "es" ? "Mensaje" : "Message")}
+      placeholder={(language == "es" ? "Escribe tu mensaje aquí" : "Write me your message!")}
     />
     <button
       id="enviar"
       type="submit"
       class="bg-button w-[50%] border-green-400 shadow-sm rounded-md ubuntu-regular text-primary font-semibold cursor-pointer py-0.5"
-      >Enviar</button
+      >{(language == "es" ? "Enviar" : "Send")}</button
     >
   </div>
 </form>

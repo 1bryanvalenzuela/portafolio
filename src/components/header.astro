@@ -7,11 +7,11 @@ const { language } = Astro.props;
 
 <nav
   id="header-container"
-  class="fixed w-full flex md:justify-center md:pe-0 justify-end pe-10 py-6 z-3"
+  class="fixed w-full flex md:justify-center md:pe-0 justify-end pe-10 py-6 z-10"
 >
   <ul
     id="header"
-    class="relative justify-center bg-primary rounded-lg md:rounded-full contenedor-style z-5"
+    class="relative justify-center bg-primary rounded-lg md:rounded-full contenedor-style"
   >
     <button id="menu-button" class="block md:hidden cursor-pointer">
       <Image class="m-2.5 md:mx-8" src={Menu} alt="Icono Menu" />
@@ -63,9 +63,14 @@ const { language } = Astro.props;
 </script>
 
 <style>
+  #header-container {
+    pointer-events: none;
+  }
+
   #header {
     opacity: 30%;
     transition: opacity 0.3s ease-in-out;
+    pointer-events: auto;
   }
 
   #header:hover {
