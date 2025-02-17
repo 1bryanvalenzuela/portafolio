@@ -1,7 +1,6 @@
 ---
 import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
-import "../styles/global.css";
 
 import "@fontsource-variable/ubuntu-sans-mono";
 import "@fontsource-variable/ubuntu-sans";
@@ -30,7 +29,12 @@ const { language } = Astro.props;
         : "Data management and programming specialist, bringing support to decision making. Can help you by providing data analysis, web development and consulting services to improve your business processes."}
     />
     <link rel="canonical" href="https://www.bryanvalenzuela.dev" />
-    <meta property="og:title" content="Bryan Valenzuela" />
+    <meta
+      property="og:title"
+      content={language == "es"
+        ? "Bryan Valenzuela | Análisis de datos y desarrollo web"
+        : "Bryan Valenzuela | Data analysis and web development"}
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.bryanvalenzuela.dev" />
 

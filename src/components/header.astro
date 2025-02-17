@@ -9,31 +9,39 @@ const { language } = Astro.props;
   id="header-container"
   class="fixed w-full flex md:justify-center md:pe-0 justify-end pe-10 py-6 z-10"
 >
-  <ul
+  <div
     id="header"
     class="relative justify-center bg-primary rounded-lg md:rounded-full contenedor-style"
   >
     <button id="menu-button" class="block md:hidden cursor-pointer">
-      <Image class="m-2.5 md:mx-8" src={Menu} alt="Icono Menu" />
+      <Image class="m-2.5 md:mx-8" src={Menu} alt="" />
     </button>
-    <div
+    <ul
       id="menu-links"
       class="hidden md:flex flex-col md:flex-row gap-1 md:gap-8 text-color-primary ubuntu-mono-regular p-2.5 md:py-1.5 md:px-7 text-md md:text-lg font-bold"
     >
       <li class="pb-1 pe-2 border-b-1 md:border-b-0 md:p-0 text-color-primary">
-        <a href="#inicio" class="linkheader">{( language == "es" ? "/Inicio" : "/Home" )}</a>
+        <a href="#inicio" class="linkheader"
+          >{language == "es" ? "/Inicio" : "/Home"}</a
+        >
       </li>
       <li class="pb-1 pe-2 border-b-1 md:border-b-0 md:p-0 text-color-primary">
-        <a href="#projects" class="linkheader">{( language == "es" ? "/Proyectos" : "/Projects" )}</a>
+        <a href="#projects" class="linkheader"
+          >{language == "es" ? "/Proyectos" : "/Projects"}</a
+        >
       </li>
       <li class="pb-1 pe-2 border-b-1 md:border-b-0 md:p-0 text-color-primary">
-        <a href="#contact" class="linkheader">{( language == "es" ? "/Contacto" : "/Contact" )}</a>
+        <a href="#contact" class="linkheader"
+          >{language == "es" ? "/Contacto" : "/Contact"}</a
+        >
       </li>
       <li class="pe-2 md:p-0">
-        <a href="#otros" class="linkheader">{( language == "es" ? "/Otros" : "/Others" )}</a>
+        <a href="#otros" class="linkheader"
+          >{language == "es" ? "/Otros" : "/Others"}</a
+        >
       </li>
-    </div>
-  </ul>
+    </ul>
+  </div>
 </nav>
 
 <script>
