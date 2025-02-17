@@ -4,17 +4,30 @@ const theme = {
   light: ["#475d4520", "#475d4540", "#82b97d", "#63ad54", "#1e830a"],
 };
 
-
-
 const Contributions = ({ language }: { language: string }) => {
-  const labels = language === "es"
-    ? {
-        labels: {
-          totalCount: "Llevo {{count}} contribuciones durante 12 meses.",
-          legend: { less: "Menos", more: "Más" },
-        },
-      }
-    : {};
+  const labels =
+    language === "es"
+      ? {
+          labels: {
+            totalCount: "Llevo {{count}} contribuciones durante 12 meses.",
+            legend: { less: "Menos", more: "Más" },
+            months: [
+              "Ene",
+              "Feb",
+              "Mar",
+              "Abr",
+              "May",
+              "Jun",
+              "Jul",
+              "Ago",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dic",
+            ],
+          },
+        }
+      : {};
 
   return (
     <div className="ubuntu-regular">
