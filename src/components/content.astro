@@ -43,7 +43,7 @@ const projectsArray =
     <div
       class="w-full px-8 md:px-0 md:w-[720px] flex flex-col md:flex-row md:justify-between text-color-primary ubuntu-mono-regular text-xl md:text-2xl font-bold gap-8 z-3"
     >
-      <Enlaces language />
+      <Enlaces language={language} />
     </div>
   </div>
 </div>
@@ -98,7 +98,7 @@ const projectsArray =
       <h3
         class="flex z-2 ubuntu-mono-regular text-xl font-bold text-color-primary transition-colors md:mx-0 pt-12"
       >
-        {language == "es" ? "Certificados" : "Certificates"}
+        {language == "es" ? "Certificados" : "Certifications"}
       </h3>
       {
         certificatesArray.map(([id, certificate]) => (

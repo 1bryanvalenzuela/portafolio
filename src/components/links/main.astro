@@ -1,5 +1,7 @@
 ---
 import Link from "./link.astro";
+
+const { language } = Astro.props;
 ---
 
 <ul class="flex flex-row gap-8">
@@ -11,6 +13,8 @@ import Link from "./link.astro";
 </ul>
 <ul class="flex">
   <li>
-    <Link href="/cv_bryanv.pdf">Curriculum Vitae</Link>
+    <Link href={language == "es" ? "/cv_bryanv.pdf" : "/cv_bryanv_en.pdf"}
+      >Curriculum Vitae</Link
+    >
   </li>
 </ul>
