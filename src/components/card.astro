@@ -41,6 +41,17 @@ const images = import.meta.glob("../assets/*");
   </div>
 </a>
 
+<script>
+  const spanLink = document.getElementById("spanLink");
+
+  if (spanLink) {
+    spanLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      window.open("https://github.com/sRosinsky", "_blank");
+    });
+  }
+</script>
+
 <style>
   .bg-tag {
     background: linear-gradient(175deg, #7eff64 20%, #68e64f 120%);
