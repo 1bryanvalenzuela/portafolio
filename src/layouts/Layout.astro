@@ -28,7 +28,12 @@ const { language } = Astro.props;
         ? "Especialista en tecnología y gestión de datos con el fin de brindar soporte a la toma de decisiones. Puedo ayudarte entregando servicios de análisis de datos, desarrollo web y consultoria para mejorar tus procesos de negocio."
         : "Data management and programming specialist, bringing support to decision making. Can help you by providing data analysis, web development and consulting services to improve your business processes."}
     />
-    <link rel="canonical" href="https://www.bryanvalenzuela.dev" />
+    <link
+      rel="canonical"
+      href={language === "es"
+        ? "https://www.bryanvalenzuela.dev"
+        : "https://www.bryanvalenzuela.dev/en"}
+    />
     <meta
       property="og:title"
       content={language == "es"
@@ -36,7 +41,12 @@ const { language } = Astro.props;
         : "Bryan Valenzuela | Data analysis and web development"}
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.bryanvalenzuela.dev" />
+    <meta
+      property="og:url"
+      content={language === "es"
+        ? "https://www.bryanvalenzuela.dev"
+        : "https://www.bryanvalenzuela.dev/en"}
+    />
 
     <meta
       property="og:image:secure-url"
