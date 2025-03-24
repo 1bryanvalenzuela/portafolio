@@ -29,6 +29,7 @@ const projectsArray =
       class="w-full px-8 md:px-0 md:w-[720px] flex flex-col items-center text-center gap-12 typewriter"
     >
       <h1
+        id="title"
         class="flex z-2 ubuntu-mono-regular text-3xl md:text-6xl font-bold text-color-primary transition-colors"
       >
         Bryan Valenzuela
@@ -134,3 +135,26 @@ const projectsArray =
     mask-composite: intersect, intersect;
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var title = document.getElementById("title");
+    var i = 0;
+    var txt = "Bryan Valenzuela";
+    var speed = 200;
+
+    if (!title) return;
+    title.innerHTML = "";
+
+    function typeWriter() {
+      if (i < txt.length) {
+        if (!title) return;
+        title.innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    typeWriter();
+  });
+</script>

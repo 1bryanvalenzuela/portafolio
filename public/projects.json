@@ -1,14 +1,14 @@
 { 
     "es": { 
     "transportes nemo": {
-        "title": "Empresas Nemo",
+        "title": "Empresas Nemo - Sitio Web",
         "img": "../assets/transportes.webp",
         "content": "Desarrollé el sitio web para una empresa de transporte. Usé Astro y React para la interfaz y formularios; ExpressJS y PostgreSQL para la creación del backend vía una RestAPI que maneja las solicitudes de la página.",
         "tags": ["Astro", "React", "ExpressJS", "PostgreSQL"],
         "link": "https://www.empresasnemo.cl"
     },
     "mp reviews": {
-        "title": "MP Reviews (En mantenimiento)",
+        "title": "MP Reviews (En desarrollo)",
         "img": "../assets/mp.webp",
         "content": "Creación de una aplicación en conjunto a <span id='spanLink' class='font-semibold text-color-primary hover:text-black hover:underline'>@sRosinsky</span>. Con el fin de crear una comunidad que pueda opinar e interactuar con los juegos multijugador. Uso de AWS y sus servicios para gestionar las funciones, base de datos, permisos y autentificación; React para la interfaz del usuario y conectar con las bases de datos de DynamoDB y PostgreSQL.",
         "tags": ["React", "AWS", "NoSQL", "PostgreSQL"],
@@ -30,18 +30,18 @@
     }
  }, "en": {
     "transportes nemo": {
-        "title": "Transportes Nemo",
+        "title": "Empresas Nemo - Website",
         "img": "../assets/transportes.webp",
         "content": "Developed the website for a transportation company. Used Astro and React for the frontend and forms; ExpressJS and PostgreSQL for the backend creation via a RestAPI that handles the page requests.",
         "tags": ["Astro", "React", "ExpressJS", "PostgreSQL"],
-        "link": "https://nemo-frontend-production.up.railway.app"
+        "link": "https://www.empresasnemo.cl"
     },
     "mp reviews": {
-        "title": "MP Reviews",
+        "title": "MP Reviews (Work in progress)",
         "img": "../assets/mp.webp",
         "content": "Created an application with <span id='spanLink' class='font-semibold text-color-primary hover:text-black hover:underline'>@sRosinsky</span>, where the community can review multiplayer games. Used AWS and its services to manage roles, database, permissions and authentication; React for the user interface and fetching from DynamoDB and PostgreSQL databases.",
         "tags": ["React", "AWS", "NoSQL", "PostgreSQL"],
-        "link": "https://main.d9yrixme2n119.amplifyapp.com"
+        "link": "/"
     },
     "dashboard": {
         "title": "Dashboard - Chilean products",
