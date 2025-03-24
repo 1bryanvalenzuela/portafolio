@@ -11,31 +11,31 @@ const { language } = Astro.props;
 >
   <div
     id="header"
-    class="relative justify-center bg-primary rounded-lg md:rounded-full contenedor-style"
+    class="relative justify-center bg-primary rounded-lg contenedor-style"
   >
     <button id="menu-button" class="block md:hidden cursor-pointer">
       <Image class="m-2.5 md:mx-8" src={Menu} alt="" />
     </button>
     <ul
       id="menu-links"
-      class="hidden md:flex flex-col md:flex-row gap-1 md:gap-8 text-color-primary ubuntu-mono-regular p-2.5 md:py-1.5 md:px-7 text-md md:text-lg font-bold"
+      class="hidden md:flex flex-col md:flex-row gap-2 md:gap-8 text-color-primary ubuntu-mono-regular p-3 md:py-1.5 md:px-7 text-lg font-bold"
     >
-      <li class="pb-1 pe-2 border-b-1 md:border-b-0 md:p-0 text-color-primary">
+      <li class="pb-1 md:p-0 text-color-primary">
         <a href="#inicio" class="linkheader"
           >{language == "es" ? "/Inicio" : "/Home"}</a
         >
       </li>
-      <li class="pb-1 pe-2 border-b-1 md:border-b-0 md:p-0 text-color-primary">
+      <li class="pb-1 md:p-0 text-color-primary">
         <a href="#projects" class="linkheader"
           >{language == "es" ? "/Proyectos" : "/Projects"}</a
         >
       </li>
-      <li class="pb-1 pe-2 border-b-1 md:border-b-0 md:p-0 text-color-primary">
+      <li class="pb-1 md:p-0 text-color-primary">
         <a href="#contact" class="linkheader"
           >{language == "es" ? "/Contacto" : "/Contact"}</a
         >
       </li>
-      <li class="pe-2 md:p-0">
+      <li class="md:p-0">
         <a href="#otros" class="linkheader"
           >{language == "es" ? "/Otros" : "/Others"}</a
         >
@@ -46,11 +46,15 @@ const { language } = Astro.props;
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector("#header") as HTMLElement;
+    if (!header) return;
+
     const menuButton = document.querySelector("#menu-button");
     const menuLinks = document.querySelector("#menu-links");
-    const header = document.querySelector("#header");
 
-    if (menuButton && menuLinks && header) {
+    let prevScrollpos = window.pageYOffset;
+
+    if (menuButton && menuLinks) {
       menuButton.addEventListener("click", () => {
         menuButton.classList.add("hidden");
         menuLinks.classList.add("flex");
@@ -67,6 +71,18 @@ const { language } = Astro.props;
         menuLinks.classList.add("hidden");
       });
     }
+
+    window.addEventListener("scroll", function () {
+      let currentScrollPos = window.pageYOffset;
+
+      if (prevScrollpos <= currentScrollPos) {
+        header.style.top = "-7.2rem";
+      } else {
+        header.style.top = "0";
+      }
+
+      prevScrollpos = currentScrollPos;
+    });
   });
 </script>
 
@@ -76,8 +92,12 @@ const { language } = Astro.props;
   }
 
   #header {
-    opacity: 30%;
-    transition: opacity 0.3s ease-in-out;
+    opacity: 60%;
+    top: 0;
+    transition:
+      opacity 0.3s ease-in-out,
+      top 0.3s ease-in-out,
+      padding 0.3s ease-in-out;
     pointer-events: auto;
   }
 

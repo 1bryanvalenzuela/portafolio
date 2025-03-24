@@ -2,12 +2,12 @@
 import { Image } from "astro:assets";
 import img from "../assets/image.webp";
 
-import us from "../assets/us.svg";
+import gb from "../assets/gb.svg";
 import es from "../assets/es.svg";
 
 const { language } = Astro.props;
 
-const flag = language == "es" ? us : es;
+const flag = language == "es" ? gb : es;
 ---
 
 <div
