@@ -44,7 +44,7 @@
 }
 
 .bg-primary {
-    background-color: #f8f1ee;
+    background-color: oklch(98.5% 0 0);
 }
 
 .bg-secondary {
