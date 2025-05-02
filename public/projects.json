@@ -10,7 +10,7 @@
     "mp reviews": {
         "title": "MP Reviews (En desarrollo)",
         "img": "../assets/mp.webp",
-        "content": "Creación de una aplicación en conjunto a <span id='spanLink' class='font-semibold text-color-primary hover:text-black hover:underline'>@sRosinsky</span>. Con el fin de crear una comunidad que pueda opinar e interactuar con los juegos multijugador. Uso de AWS y sus servicios para gestionar las funciones, base de datos, permisos y autentificación; React para la interfaz del usuario y conectar con las bases de datos de DynamoDB y PostgreSQL.",
+        "content": "Creación de una aplicación. Con el fin de crear una comunidad que pueda opinar e interactuar con los juegos multijugador. Uso de AWS y sus servicios para gestionar las funciones, base de datos, permisos y autentificación; React para la interfaz del usuario y conectar con las bases de datos de DynamoDB y PostgreSQL.",
         "tags": ["React", "AWS", "NoSQL", "PostgreSQL"],
         "link": "/"
     },
@@ -39,7 +39,7 @@
     "mp reviews": {
         "title": "MP Reviews (Work in progress)",
         "img": "../assets/mp.webp",
-        "content": "Created an application with <span id='spanLink' class='font-semibold text-color-primary hover:text-black hover:underline'>@sRosinsky</span>, where the community can review multiplayer games. Used AWS and its services to manage roles, database, permissions and authentication; React for the user interface and fetching from DynamoDB and PostgreSQL databases.",
+        "content": "Created an application, where the community can review multiplayer games. Used AWS and its services to manage roles, database, permissions and authentication; React for the user interface and fetching from DynamoDB and PostgreSQL databases.",
         "tags": ["React", "AWS", "NoSQL", "PostgreSQL"],
         "link": "/"
     },
