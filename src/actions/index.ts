@@ -19,6 +19,7 @@ export const server = {
       name: z.string().min(4).max(35),
       email: z.string().email().max(35),
       message: z.string().min(4).max(500),
+      company: z.string(),
     }),
     handler: async (input) => {
       const data: { [key: string]: string } = {};
@@ -28,6 +29,8 @@ export const server = {
           data[key] = value;
         }
       });
+
+      if (input.company) return;
 
       try {
         await transporter.sendMail({

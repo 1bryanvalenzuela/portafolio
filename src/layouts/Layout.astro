@@ -1,15 +1,22 @@
 ---
 import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
-
+import "../styles/global.css";
 import "@fontsource-variable/ubuntu-sans-mono";
 import "@fontsource-variable/ubuntu-sans";
 
 const { language } = Astro.props;
+const cookies = Astro.cookies;
+
+const themeCookies = cookies.get("theme");
+let Theme = "";
+if (themeCookies) {
+  Theme = themeCookies.value;
+}
 ---
 
 <!doctype html>
-<html lang={language}>
+<html class={Theme} lang={language}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -110,7 +117,7 @@ const { language } = Astro.props;
     />
   </head>
   <body>
-    <Header language={language} />
+    <Header language={language} theme={Theme} />
     <slot />
     <Footer language={language} />
   </body>
@@ -122,6 +129,6 @@ const { language } = Astro.props;
     margin: 0;
     width: 100%;
     height: 100%;
-    background-color: #f8f1ee;
+    background-color: var(--primary-color);
   }
 </style>

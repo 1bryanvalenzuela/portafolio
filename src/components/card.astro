@@ -10,7 +10,7 @@ const images = import.meta.glob("../assets/*");
   href={link}
   target="_blank"
   rel="nofollow"
-  class="flex flex-col border-card rounded-lg p-2 mx-8 md:m-0 contenedor-style transition-all"
+  class="flex flex-col border-card rounded-lg p-2 mx-8 md:m-0 contenedor-style bg-card backdrop-opacity-50 transition-all text-primary"
 >
   <div class="flex flex-col md:flex-row gap-4 md:gap-2">
     <Image
@@ -21,7 +21,7 @@ const images = import.meta.glob("../assets/*");
     />
     <div class="flex flex-col gap-4 md:gap-2 px-2">
       <span
-        class="text-start text-color-primary ubuntu-mono-regular text-lg md:text-xl font-bold"
+        class="text-start text-primary ubuntu-mono-regular text-lg md:text-xl font-bold"
       >
         {title}
       </span>
@@ -30,7 +30,7 @@ const images = import.meta.glob("../assets/*");
         {
           tagsArray.map((tag) => (
             <span class="rounded-lg bg-tag p-1 leading-none">
-              <span class="text-primary px-1 text-sm md:text-md font-semibold">
+              <span class="text-black px-1 text-sm md:text-md font-semibold">
                 {tag}
               </span>
             </span>
@@ -41,20 +41,9 @@ const images = import.meta.glob("../assets/*");
   </div>
 </a>
 
-<script>
-  const spanLink = document.getElementById("spanLink");
-
-  if (spanLink) {
-    spanLink.addEventListener("click", function (event) {
-      event.preventDefault();
-      window.open("https://github.com/sRosinsky", "_blank");
-    });
-  }
-</script>
-
 <style>
   .bg-tag {
-    background: linear-gradient(175deg, #7eff64 20%, #68e64f 120%);
+    background: linear-gradient(175deg, #67dab3 20%, #16c98d 120%);
     filter: saturate(75%);
   }
 
@@ -68,28 +57,25 @@ const images = import.meta.glob("../assets/*");
   }
 
   .border-card:hover {
-    border: 3px solid #4db637;
-    box-shadow: 0 0 7px #4db637;
+    border: 3px solid #16c98d;
+    box-shadow: 0 0 7px #16b4c9;
     animation:
       borderColorChange 4s cubic-bezier(0.1, 0, 0.8, 1) 0.3s infinite,
       bgShadowHover 4s cubic-bezier(0.1, 0, 0.8, 1) 0.3s infinite;
   }
 
   @keyframes borderColorChange {
-    0% {
-      border-color: #4db637;
+    10% {
+      border-color: #16c98d;
     }
-    13% {
-      border-color: #1dffb4;
-    }
-    47% {
+    35% {
       border-color: #303eff;
     }
-    67% {
+    75% {
       border-color: #ff3bff;
     }
-    95% {
-      border-color: #4db637;
+    90% {
+      border-color: #000000;
     }
   }
 </style>

@@ -1,46 +1,119 @@
 ---
-import Image from "astro/components/Image.astro";
-import Menu from "../assets/menu.svg";
+const { language, theme } = Astro.props;
 
-const { language } = Astro.props;
+let menuColor = "#000000";
+if (theme === "dark") {
+  menuColor = "#ffffff";
+}
 ---
 
 <nav
   id="header-container"
-  class="fixed w-full flex md:justify-center md:pe-0 justify-end pe-10 py-6 z-10"
+  class="fixed w-full flex justify-center flex-row z-10 text-primary"
 >
   <div
     id="header"
-    class="relative justify-center bg-primary rounded-lg contenedor-style"
+    class="relative flex flex-col w-full justify-center bg-primary contenedor-style"
   >
-    <button id="menu-button" class="block md:hidden cursor-pointer">
-      <Image class="m-2.5 md:mx-8" src={Menu} alt="" />
-    </button>
-    <ul
-      id="menu-links"
-      class="hidden md:flex flex-col md:flex-row gap-2 md:gap-8 text-color-primary ubuntu-mono-regular p-3 md:py-1.5 md:px-7 text-lg font-bold"
+    <div
+      class="flex w-full max-w-[720px] h-15 justify-between items-center mx-auto"
     >
-      <li class="pb-1 md:p-0 text-color-primary">
-        <a href="#inicio" class="linkheader"
-          >{language == "es" ? "/Inicio" : "/Home"}</a
+      <h1 class="ubuntu-regular text-lg font-bold ms-8 md:ms-0 cursor-default">
+        Bryan Valenzuela Cáceres
+      </h1>
+      <div class="flex">
+        <button
+          id="menu-button"
+          class="flex w-full md:hidden cursor-pointer me-4 self-end"
         >
-      </li>
-      <li class="pb-1 md:p-0 text-color-primary">
-        <a href="#projects" class="linkheader"
-          >{language == "es" ? "/Proyectos" : "/Projects"}</a
+          <div class="p-4">
+            <svg
+              height={24}
+              viewBox="0 0 12 12"
+              enable-background="new 0 0 12 12"
+              id="menu-svg"
+              version="1.1"
+              xml:space="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              fill={menuColor}
+              ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+                <g>
+                  <rect fill={menuColor} height="1" width="11" x="0.5" y="5.5"
+                  ></rect>
+                  <rect fill={menuColor} height="1" width="11" x="0.5" y="2.5"
+                  ></rect>
+                  <rect fill={menuColor} height="1" width="11" x="0.5" y="8.5"
+                  ></rect>
+                </g>
+              </g></svg
+            >
+          </div>
+        </button>
+        <ul
+          class="hidden md:flex flex-col md:flex-row gap-2 md:gap-8 ubuntu-mono-regular md:py-1.5 text-lg z-50 font-bold"
         >
-      </li>
-      <li class="pb-1 md:p-0 text-color-primary">
-        <a href="#contact" class="linkheader"
-          >{language == "es" ? "/Contacto" : "/Contact"}</a
-        >
-      </li>
-      <li class="md:p-0">
-        <a href="#otros" class="linkheader"
-          >{language == "es" ? "/Otros" : "/Others"}</a
-        >
-      </li>
-    </ul>
+          <li class="py-2">
+            <a href="#inicio" class="linkheader"
+              >{language == "es" ? "/Inicio" : "/Home"}</a
+            >
+          </li>
+          <li class="py-2">
+            <a href="#projects" class="linkheader"
+              >{language == "es" ? "/Proyectos" : "/Projects"}</a
+            >
+          </li>
+          <li class="py-2">
+            <a href="#contact" class="linkheader"
+              >{language == "es" ? "/Contacto" : "/Contact"}</a
+            >
+          </li>
+          <li class="py-2">
+            <a href="#otros" class="linkheader"
+              >{language == "es" ? "/Otros" : "/Others"}</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="mobile-menu-container" class="md:hidden flex w-full">
+      <ul
+        id="menu-links"
+        class="hidden flex-col gap-2 ubuntu-mono-regular text-lg font-bold w-full"
+      >
+        <li class="flex w-full">
+          <a
+            href="#inicio"
+            class="px-8 py-2 hover:bg-cyan-500 text-primary w-full"
+            >{language == "es" ? "/Inicio" : "/Home"}</a
+          >
+        </li>
+        <li class="flex w-full">
+          <a
+            href="#projects"
+            class="px-8 py-2 hover:bg-cyan-500 text-primary w-full"
+            >{language == "es" ? "/Proyectos" : "/Projects"}</a
+          >
+        </li>
+        <li class="flex w-full">
+          <a
+            href="#contact"
+            class="px-8 py-2 hover:bg-cyan-500 text-primary w-full"
+            >{language == "es" ? "/Contacto" : "/Contact"}</a
+          >
+        </li>
+        <li class="flex w-full">
+          <a
+            href="#otros"
+            class="px-8 py-2 hover:bg-cyan-500 text-primary w-full"
+            >{language == "es" ? "/Otros" : "/Others"}</a
+          >
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
@@ -50,25 +123,57 @@ const { language } = Astro.props;
     if (!header) return;
 
     const menuButton = document.querySelector("#menu-button");
-    const menuLinks = document.querySelector("#menu-links");
+    const menuLinks = document.querySelector("#menu-links") as HTMLElement;
+    const headerContainer = document.querySelector(
+      "#header-container"
+    ) as HTMLElement;
 
     let prevScrollpos = window.pageYOffset;
 
+    function toggleMenu(status: string) {
+      if (status === "show") {
+        menuLinks.classList.remove("hidden");
+        menuLinks.classList.add("flex");
+      } else {
+        menuLinks.classList.add("hidden");
+        menuLinks.classList.remove("flex");
+      }
+    }
+
+    function toggleHeader(status: string) {
+      if (status === "show") {
+        header.style.top = "0";
+      } else {
+        if (menuLinks.classList.contains("flex")) {
+          header.style.top = "-17rem";
+          setTimeout(() => {
+            toggleMenu("hide");
+          }, 300);
+        } else {
+          header.style.top = "-7.5rem";
+        }
+      }
+    }
+
     if (menuButton && menuLinks) {
       menuButton.addEventListener("click", () => {
-        menuButton.classList.add("hidden");
-        menuLinks.classList.add("flex");
-        menuLinks.classList.remove("hidden");
+        if (menuLinks.classList.contains("hidden")) {
+          toggleMenu("show");
+        } else {
+          toggleMenu("hide");
+        }
       });
 
-      header.addEventListener("mouseleave", () => {
-        menuButton.classList.remove("hidden");
-        menuLinks.classList.add("hidden");
+      menuLinks.addEventListener("click", () => {
+        if (window.innerWidth < 768) {
+          toggleHeader("hide");
+        }
       });
 
-      header.addEventListener("blur", () => {
-        menuButton.classList.remove("hidden");
-        menuLinks.classList.add("hidden");
+      headerContainer.addEventListener("mouseleave", () => {
+        if (window.innerWidth >= 768) {
+          toggleMenu("hide");
+        }
       });
     }
 
@@ -76,9 +181,9 @@ const { language } = Astro.props;
       let currentScrollPos = window.pageYOffset;
 
       if (prevScrollpos <= currentScrollPos) {
-        header.style.top = "-7.2rem";
+        toggleHeader("hide");
       } else {
-        header.style.top = "0";
+        toggleHeader("show");
       }
 
       prevScrollpos = currentScrollPos;
@@ -91,8 +196,16 @@ const { language } = Astro.props;
     pointer-events: none;
   }
 
+  #menu-links {
+    top: 0;
+    transition:
+      opacity 0.3s ease-in-out,
+      top 0.3s ease-in-out,
+      padding 0.3s ease-in-out;
+  }
+
   #header {
-    opacity: 60%;
+    opacity: 80%;
     top: 0;
     transition:
       opacity 0.3s ease-in-out,
@@ -102,6 +215,6 @@ const { language } = Astro.props;
   }
 
   #header:hover {
-    opacity: 90%;
+    opacity: 95%;
   }
 </style>

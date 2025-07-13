@@ -3,8 +3,7 @@ const { type, id, label, placeholder } = Astro.props;
 ---
 
 <div class="ubuntu-regular">
-  <label for={id} class="block text-xs font-medium text-gray-600">{label}</label
-  >
+  <label for={id} class="block text-xs font-medium text-primary">{label}</label>
   <input
     type={type}
     id={id}
@@ -12,7 +11,7 @@ const { type, id, label, placeholder } = Astro.props;
     required
     minlength={4}
     maxlength={35}
-    class="w-full mt-0.5 py-1.5 px-2 bg-white rounded-md focus:outline-none shadow-sm text-sm"
+    class="w-full mt-0.5 py-1.5 px-2 bg-input rounded-md focus:outline-none shadow-sm text-sm"
     placeholder={placeholder}
   />
 </div>

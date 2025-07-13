@@ -14,11 +14,11 @@ const { language } = Astro.props;
     <h2 class="ubuntu-regular text-xl md:text-2xl text-prettier">
       {
         language == "es"
-          ? "Si necesitas de algún servicio relacionado con la informática y/o negocios,"
+          ? "Si crees que puedo serte útil,"
           : "If you need any service related to computing and/or business,"
       }
-      <span class="font-bold text-color-primary">
-        {language == "es" ? "¡contáctame!" : "contact me!"}</span
+      <span class="font-bold text-primary">
+        {language == "es" ? "no dudes en contactarme." : "contact me!"}</span
       >
     </h2>
   </div>
@@ -37,6 +37,12 @@ const { language } = Astro.props;
       label={language == "es" ? "Correo electrónico" : "Email"}
       placeholder={language == "es" ? "Nombre@ejemplo.com" : "Name@example.com"}
     />
+    <input
+      type="text"
+      name="company"
+      class="hidden w-full mt-0.5 py-1.5 px-2 bg-input rounded-md focus:outline-none shadow-sm text-sm"
+      placeholder={language == "es" ? "Empresa" : "Company"}
+    />
     <TextArea
       id="message"
       label={language == "es" ? "Mensaje" : "Message"}
@@ -47,7 +53,7 @@ const { language } = Astro.props;
     <button
       id="enviar"
       type="submit"
-      class="bg-button w-[50%] border-green-400 shadow-sm rounded-md ubuntu-regular text-primary font-semibold cursor-pointer py-0.5"
+      class="bg-button w-[50%] border-green-400 shadow-sm rounded-md ubuntu-regular text-black font-semibold cursor-pointer py-0.5"
       >{language == "es" ? "Enviar" : "Send"}</button
     >
   </div>
@@ -94,7 +100,7 @@ const { language } = Astro.props;
 
 <style>
   .bg-button {
-    background: #68e64f;
+    background: #16c98d;
     transition:
       background 0.4s ease-in-out,
       box-shadow 0.4s ease-in-out,
@@ -106,7 +112,7 @@ const { language } = Astro.props;
   }
 
   .bg-button-sent {
-    background: #94cf88;
+    background: #71b19c;
     box-shadow:
       inset -10px 10px 6px -15px rgba(255, 255, 255, 0.4),
       inset 0 -10px 20px -10px rgba(0, 0, 0, 0.25);
@@ -117,7 +123,7 @@ const { language } = Astro.props;
   }
 
   .bg-button:hover {
-    box-shadow: 0 0 7px #68e64f;
+    box-shadow: 0 0 7px #16c98d;
     color: white;
     animation:
       bgColorHover 4s linear infinite,
@@ -127,19 +133,13 @@ const { language } = Astro.props;
 
   @keyframes bgColorChange {
     0% {
-      background: #68e64f; /* Verde oscuro */
-    }
-    25% {
-      background: #68e64f; /* Regresa a negro */
+      background: #16c98d; /* Verde oscuro */
     }
     50% {
-      background: #a2f891; /* Verde claro */
-    }
-    75% {
-      background: #68e64f; /* Regresa a negro */
+      background: #39f1b4; /* Verde claro */
     }
     100% {
-      background: #68e64f; /* Regresa a negro */
+      background: #16c98d; /* Regresa a negro */
     }
   }
 
@@ -154,25 +154,19 @@ const { language } = Astro.props;
       background: #ff3bff; /* Regresa a negro */
     }
     80% {
-      background: #4db637; /* Regresa a negro */
+      background: #303eff; /* Regresa a negro */
     }
   }
 
   @keyframes bgShadow {
     0% {
-      box-shadow: 0 0 7px #7eff64;
-    }
-    25% {
-      box-shadow: 0 0 8px #7eff64;
+      box-shadow: 0 0 7px #16c98d;
     }
     50% {
-      box-shadow: 0 0 10px #a2f891;
-    }
-    75% {
-      box-shadow: 0 0 8px #7eff64;
+      box-shadow: 0 0 10px #16c98d;
     }
     100% {
-      box-shadow: 0 0 7px #7eff64;
+      box-shadow: 0 0 7px #16c98d;
     }
   }
 
@@ -187,7 +181,7 @@ const { language } = Astro.props;
       box-shadow: 0 0 7px #ff3bff; /* Regresa a negro */
     }
     80% {
-      box-shadow: 0 0 7px #4db637; /* Regresa a negro */
+      box-shadow: 0 0 7px #303eff; /* Regresa a negro */
     }
   }
 </style>

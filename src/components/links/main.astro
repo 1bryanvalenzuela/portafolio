@@ -4,14 +4,14 @@ import Link from "./link.astro";
 const { language } = Astro.props;
 ---
 
-<ul class="flex flex-row gap-8">
+<ul class="flex flex-row gap-8 text-primary">
   <li><Link href="mailto:1bryanvalenzuela@gmail.com">Mail</Link></li><li>
     <Link href="https://github.com/1bryanvalenzuela">Github</Link>
   </li><li>
     <Link href="https://www.linkedin.com/in/1bryanvalenzuela/">Linkedin</Link>
   </li>
 </ul>
-<ul class="flex">
+<ul class="flex text-primary">
   <li>
     <Link href={language == "es" ? "/cv_bryanv.pdf" : "/cv_bryanv_en.pdf"}
       >Curriculum Vitae</Link

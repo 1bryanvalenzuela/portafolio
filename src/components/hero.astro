@@ -8,33 +8,31 @@ import es from "../assets/es.svg";
 const { language } = Astro.props;
 
 const flag = language == "es" ? gb : es;
+
+const cookies = Astro.cookies;
+const themeCookies = cookies.get("theme");
+let Theme = "";
+let themeValue = "";
+let themeString = "oscuro";
+let themeIcon = "🌙";
+if (themeCookies) {
+  Theme = themeCookies.value;
+  if (Theme === "dark") {
+    themeValue = "dark";
+    themeString = "claro";
+    themeIcon = "☀️";
+  }
+}
 ---
 
 <div
   id="inicio"
-  class="relative flex w-full items-center justify-center bg-secondary transition-bg shadow-bottom overflow-hidden"
+  class="relative flex w-full items-center justify-center bg-secondary overflow-hidden text-primary"
 >
-  <div class="logo-background"></div>
-  <div class="relative w-full justify-center items-center">
-    <div class="flex md:hidden w-fit justify-start py-9 ps-8 z-4">
-      <a
-        href={language == "es" ? "/en" : "/"}
-        class="inline-flex z-4 font-semibold text-sm text-green-950 ubuntu-mono-regular hover:text-black border-b-1 border-transparent hover:border-black me-25 sm:wrap"
-      >
-        <Image
-          class="w-auto h-4 pe-2 saturate-70"
-          loading="eager"
-          src={flag}
-          alt={language == "es" ? "USA Flag" : "Spanish Flag"}
-        />{
-          language == "es"
-            ? "Go to english version"
-            : "Cambiar a versión en español"
-        }</a
-      >
-    </div>
+  <div class=""></div>
+  <div class="relative w-full justify-center items-center pt-15">
     <div
-      class="w-55 h-55 md:w-65 md:h-65 mx-auto bg-primary rounded-full p-2 md:p-2.5 md:mt-30 contenedor-style"
+      class="w-55 h-55 md:w-65 md:h-65 mx-auto bg-primary rounded-full p-2 md:p-2.5 md:mt-30 contenedor-style mb-5 hidden"
     >
       <Image
         src={img}
@@ -43,31 +41,19 @@ const flag = language == "es" ? gb : es;
         class="w-full h-full rounded-full object-cover border border-transparent"
       />
     </div>
-    <div class="flex justify-center text-center py-8">
-      <p
-        class="font-bold pe-2 text-lg md:text-xl text-green-950 ubuntu-mono-regular"
+    <div class="flex w-full justify-end pe-8 pt-5 gap-5">
+      <button
+        id="theme-button"
+        class="inline-flex font-semibold text-sm ubuntu-regular border-b-1 border-transparent linkheader cursor-pointer"
+        value={themeValue}
       >
-        {language == "es" ? "Disponible" : "Available"}
-      </p>
-      <span class="h-3 w-3 pointer-events-none mt-[2.5px]">
-        <span
-          class="animate-ping absolute inline-flex h-3 w-3 mt-1.5 rounded-full bg-green-800"
-        ></span>
-        <span
-          class="relative inline-flex rounded-full h-3 w-3 bg-green-500 border border-green-950"
-        ></span>
-      </span>
-    </div>
-    <div class="hidden md:flex w-full justify-end pb-2 pe-8">
+        Modo {themeString}<span class="ps-2">{themeIcon}</span>
+      </button>
       <a
         href={language == "es" ? "/en" : "/"}
-        class="inline-flex font-semibold text-sm text-green-950 ubuntu-mono-regular hover:text-black border-b-1 border-transparent hover:border-black"
+        class="inline-flex font-semibold text-sm ubuntu-regular border-b-1 border-transparent linkheader"
       >
-        {
-          language == "es"
-            ? "Go to english version"
-            : "Cambiar a versión en español"
-        }<Image
+        {language == "es" ? "English version" : "Versión en español"}<Image
           class="w-auto h-4 ps-2 saturate-70"
           loading="eager"
           src={flag}
@@ -130,5 +116,22 @@ const flag = language == "es" ? gb : es;
     );
 
     observer.observe(jumbo);
+  }
+</script>
+
+<script>
+  const themeButton = document.querySelector(
+    "#theme-button"
+  ) as HTMLButtonElement;
+  if (themeButton) {
+    themeButton.addEventListener("click", (e: any) => {
+      const currentTheme = e.target.value;
+      if (currentTheme === "dark") {
+        document.cookie = "theme=light; path=/";
+      } else {
+        document.cookie = "theme=dark; path=/";
+      }
+      window.location.reload();
+    });
   }
 </script>

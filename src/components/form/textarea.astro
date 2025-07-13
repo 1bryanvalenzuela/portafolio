@@ -3,15 +3,14 @@ const { id, label, placeholder } = Astro.props;
 ---
 
 <div class="ubuntu-regular">
-  <label for={id} class="block text-xs font-medium text-gray-600">{label}</label
-  >
+  <label for={id} class="block text-xs font-medium text-primary">{label}</label>
   <textarea
     id={id}
     name={id}
     required
     minlength={4}
     maxlength={500}
-    class="w-full mt-1 rounded-md border-gray-200 shadow-sm bg-white resize-none py-1 px-2 text-sm focus:outline-none"
+    class="w-full mt-1 rounded-md border-gray-200 shadow-sm bg-input resize-none py-1 px-2 text-sm focus:outline-none"
     rows={4}
     placeholder={placeholder}></textarea>
 </div>

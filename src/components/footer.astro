@@ -3,24 +3,32 @@ const { language } = Astro.props;
 ---
 
 <div class="flex justify-center w-full bg-footer py-2.5">
-<div class="flex flex-col w-[720px] ubuntu-mono-regular">
-    <span class="text-sm px-8 md:px-0">Bryan Valenzuela Caceres, Chile. © 2025</span>
+  <div
+    class="flex flex-col w-[720px] ubuntu-mono-regular text-white cursor-default"
+  >
+    <span class="text-sm px-8 md:px-0"
+      >Bryan Valenzuela Cáceres, Chile. © 2025</span
+    >
     <span class="text-sm px-8 md:px-0">
-        {(language == "es" ? "Analista de datos e Ingeniero en Negocios Internacionales"
-        :
-        "Data Analyst and International Business Engineer")}</span>
-</div>
+      {
+        language == "es"
+          ? "Ingeniero en Negocios Internacionales"
+          : "International Business Engineer"
+      }</span
+    >
+  </div>
 </div>
 
 <style>
-    .bg-footer {
-        background: linear-gradient(164deg,
-        #56cc3f 0%,
-        #56dd4a 15%,
-        #89ff71 29%,
-        #89ff71 31%,
-        #56dd4a 58%,
-        #56cc3f 100%
-        ) repeat;
-    }
+  .bg-footer {
+    background: linear-gradient(
+        164deg,
+        #0c0c0c 0%,
+        #0c0c0c 15%,
+        #16c98d 29%,
+        #303eff 58%,
+        #0c0c0c 100%
+      )
+      repeat;
+  }
 </style>

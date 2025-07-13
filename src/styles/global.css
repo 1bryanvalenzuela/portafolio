@@ -1,54 +1,79 @@
 @import "tailwindcss";
 
+/* dark green-gray #283618, light gray-green #B7B7A4, soft gray #D4D4D4, off-white #F0EFEB */
+
 :root {
   --animate-typewriter: typewriter 1s ease-in-out infinite;
   @keyframes typewriter: {
     to: {
-      left: "100%",
-    },
+      left: "100%";
+    }
   }
+
+  --primary-color: #f0f0f0;
+  --text-base-color: black;
+  --primary-color-50: rgba(255, 255, 255, 0.5);
+  --inset-white: rgb(255, 255, 255, 0.8);
+}
+
+.dark {
+  --primary-color: #1d1d1d;
+  --text-base-color: #ffffff;
+  --primary-color-50: rgba(19, 19, 19, 0.5);
+  --inset-white: transparent;
+}
+
+.text-primary {
+  color: var(--text-base-color);
+}
+
+.bg-card {
+  background-color: var(--primary-color-50);
+}
+
+.bg-input {
+  background-color: var(--primary-color-50);
 }
 
 .ubuntu-regular {
-    font-family: "Ubuntu Sans Variable", sans-serif;
-  }
+  font-family: "Ubuntu Sans Variable", sans-serif;
+}
 
 .ubuntu-mono-regular {
-    font-family: "Ubuntu Mono Variable", monospace;
-  }
+  font-family: "Ubuntu Mono Variable", monospace;
+}
 
-  .linkheader {
-    border-color: #236017;
-  }
+.linkheader {
+  color: var(--text-base-color);
+}
 
-  .linkheader:hover {
-    color: black;
-  }
+.linkheader:hover {
+  border-bottom: 1px solid var(--text-base-color);
+}
 
 .contenedor-style {
-    box-shadow:
-      4px 4px 4px 0px rgba(0, 0, 0, 0.25),
-      inset 1px 2px 2px 0px rgb(255, 255, 255, 0.8);
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25),
+    inset 1px 2px 2px 0px var(--inset-white);
 }
 
 .light-top {
-    box-shadow: inset -10px 20px 6px -15px rgb(255, 255, 255, 40%);
-  }
+  box-shadow: inset -10px 20px 6px -15px rgb(255, 255, 255, 40%);
+}
 
 .shadow-bottom {
-    box-shadow: inset 0 -10px 50px -10px rgb(0, 0, 0, 25%);
+  box-shadow: inset 0 -10px 50px -10px rgb(0, 0, 0, 25%);
 }
 
 .text-color-primary {
-    color: #236017
+  color: #000000;
 }
 
 .bg-primary {
-    background-color: #f8f1ee;
+  background-color: var(--primary-color);
 }
 
 .bg-secondary {
-    background-color: #4db637;
+  background-color: var(--primary-color);
 }
 
 .border-secondary {
@@ -56,5 +81,5 @@
 }
 
 .fill-primary {
-    fill: #75AE69
+  fill: #75ae69;
 }

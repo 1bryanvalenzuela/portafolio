@@ -10,30 +10,32 @@ import certificates from "../../public/certificates.json";
 import info from "../../public/info.json";
 
 const { language } = Astro.props;
+const cookies = Astro.cookies;
+const themeCookies = cookies.get("theme");
+let contribTheme = "";
+if (themeCookies) {
+  if (themeCookies.value === "dark") {
+    contribTheme = "dark";
+  } else {
+    contribTheme = "light";
+  }
+}
 
 const certificatesArray = Object.entries(certificates);
 const projectsArray =
   language == "es" ? Object.entries(projects.es) : Object.entries(projects.en);
-
-// Revisar espaciados entre las divisiones de contenido (/Proyectos, /Contacto, /Otros)
 ---
 
 <div class="relative flex w-full bg-primary">
   <div class="absolute inset-0 overflow-hidden">
-    <div class="content-bg absolute -inset-[10px]"></div>
+    <div class="absolute -inset-[10px]"></div>
   </div>
   <div
-    class="flex flex-col w-full light-top items-center text-center gap-12 pt-15 md:pt-30"
+    class="flex flex-col w-full items-center text-center gap-12 pt-12 text-primary"
   >
     <div
-      class="w-full px-8 md:px-0 md:w-[720px] flex flex-col items-center text-center gap-12 typewriter"
+      class="w-full px-8 md:px-0 md:w-[720px] flex flex-col items-center text-center gap-12"
     >
-      <h1
-        id="title"
-        class="flex z-2 ubuntu-mono-regular text-3xl md:text-6xl font-bold text-color-primary transition-colors"
-      >
-        Bryan Valenzuela
-      </h1>
       <p class="md:text-lg ubuntu-regular text-justify z-2">
         {language == "es" ? info.es.p1 : info.en.p1}
       </p>
@@ -50,11 +52,11 @@ const projectsArray =
 </div>
 <div
   id="projects"
-  class="flex bg-primary ubuntu-regular items-center justify-center pt-20 md:pt-30"
+  class="flex bg-primary text-primary ubuntu-regular items-center justify-center pt-20 md:pt-30"
 >
   <div class="flex flex-col w-full md:w-[720px] gap-12">
     <h2
-      class="flex z-2 ubuntu-mono-regular text-2xl md:text-4xl font-bold text-color-primary transition-colors mx-8 md:mx-0"
+      class="flex z-2 ubuntu-mono-regular text-2xl md:text-4xl font-bold transition-colors mx-8 md:mx-0"
     >
       {language == "es" ? "/Proyectos" : "/Projects"}
     </h2>
@@ -75,29 +77,39 @@ const projectsArray =
 </div>
 <div class="flex justify-center bg-primary pt-12">
   <div class="w-full px-8 md:px-0 md:w-[720px]">
-    <Contributions client:only="React" language={language} />
+    <Contributions
+      client:only="React"
+      language={language}
+      theme={contribTheme}
+    />
   </div>
 </div>
-<div id="contact" class="flex justify-center bg-primary pt-15 md:pt-30">
+<div
+  id="contact"
+  class="flex justify-center bg-primary text-primary pt-15 md:pt-30"
+>
   <div class="w-full px-8 md:px-0 md:w-[720px]">
     <h2
-      class="flex z-2 ubuntu-mono-regular text-2xl md:text-4xl font-bold text-color-primary transition-colors md:mx-0"
+      class="flex z-2 ubuntu-mono-regular text-2xl md:text-4xl font-bold transition-colors md:mx-0"
     >
       {language == "es" ? "/Contacto" : "/Contact"}
     </h2>
     <Form language={language} />
   </div>
 </div>
-<div id="otros" class="flex justify-center bg-primary pt-15 md:pt-30">
+<div
+  id="otros"
+  class="flex justify-center bg-primary text-primary pt-15 md:pt-30"
+>
   <div class="w-full px-8 md:px-0 md:w-[720px]">
     <h2
-      class="flex z-2 ubuntu-mono-regular text-2xl md:text-4xl font-bold text-color-primary transition-colors md:mx-0"
+      class="flex z-2 ubuntu-mono-regular text-2xl md:text-4xl font-bold transition-colors md:mx-0"
     >
       {language == "es" ? "/Otros" : "/Others"}
     </h2>
     <div class="flex flex-col gap-8 pb-15 md:pb-30">
       <h3
-        class="flex z-2 ubuntu-mono-regular text-xl font-bold text-color-primary transition-colors md:mx-0 pt-12"
+        class="flex z-2 ubuntu-mono-regular text-xl font-bold transition-colors md:mx-0 pt-12"
       >
         {language == "es" ? "Certificados" : "Certifications"}
       </h3>

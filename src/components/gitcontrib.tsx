@@ -1,10 +1,17 @@
 import GitHubCalendar from "react-github-calendar";
 
-const theme = {
-  light: ["#475d4520", "#475d4540", "#82b97d", "#63ad54", "#1e830a"],
+const themes = {
+  light: ["#475d4520", "#96e0c8", "#67c7a7", "#37b087", "#16c98d"],
+  dark: ["#333333", "#45665b", "#4e967e", "#37b087", "#16c98d"],
 };
 
-const Contributions = ({ language }: { language: string }) => {
+const Contributions = ({
+  language,
+  theme,
+}: {
+  language: string;
+  theme: string;
+}) => {
   const labels =
     language === "es"
       ? {
@@ -30,11 +37,11 @@ const Contributions = ({ language }: { language: string }) => {
       : {};
 
   return (
-    <div className="ubuntu-regular">
+    <div className="ubuntu-regular text-primary">
       <GitHubCalendar
         username="1bryanvalenzuela"
-        colorScheme="light"
-        theme={theme}
+        colorScheme={theme as "light" | "dark"}
+        theme={themes}
         blockMargin={5} //4
         blockSize={8.5} //8
         {...labels}
