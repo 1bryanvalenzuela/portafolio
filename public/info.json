@@ -1,8 +1,8 @@
 {
-    "en": {
-        "p1": "Data management and programming specialist, bringing support to decision making. I have a degree in International Business Engineering and experience in web development, database development, and IT support.",
-        "p2": "Can provide statistical data analysis, database creation, functional and visual website development, and consulting services to improve business processes."
-    },
+  "en": {
+    "p1": "Bachelor in International Business Engineering (2024). After completing my internship as a Data Analyst, I decided to expand my knowledge in programming, developing web applications, websites, and databases with a focus on Django, React, and PostgreSQL.",
+    "p2": "I have worked on scraper automation, front-end and back-end development, and APIs for organizations, as well as in the creation of data analysis reports and tools that facilitates business processes."
+  },
     "es": {
         "p1": "Licenciado en Ingeniería en Negocios Internacionales (2024). Tras realizar mi práctica profesional como Analista de Datos, decidí expandir mi conocimiento en la programación, desarrollando proyectos de sitios web, aplicaciones y bases de datos, con enfoque en Django, React y PostgreSQL.",
         "p2": "He trabajado en la automatización de scrapers, desarrollo de front-end, back-end y APIs para organizaciones, así como en la elaboración de informes de análisis de datos y herramientas que faciliten los procesos de negocios."

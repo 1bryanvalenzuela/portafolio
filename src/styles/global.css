@@ -6,11 +6,7 @@
   --animate-typewriter: typewriter 1s ease-in-out infinite;
   @keyframes typewriter: {
     to: {
-<<<<<<< HEAD
       left: "100%";
-=======
-      left: "100%",
->>>>>>> refs/remotes/origin/main
     }
   }
 
@@ -73,11 +69,7 @@
 }
 
 .bg-primary {
-<<<<<<< HEAD
   background-color: var(--primary-color);
-=======
-    background-color: oklch(98.5% 0 0);
->>>>>>> refs/remotes/origin/main
 }
 
 .bg-secondary {
