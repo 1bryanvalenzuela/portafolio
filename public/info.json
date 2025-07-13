@@ -1,10 +1,10 @@
 {
   "en": {
     "p1": "Bachelor in International Business Engineering (2024). After completing my internship as a Data Analyst, I decided to expand my knowledge in programming, developing web applications, websites, and databases with a focus on Django, React, and PostgreSQL.",
-    "p2": "I have worked on scraper automation, front-end and back-end development, and APIs for organizations, as well as in the creation of data analysis reports and tools that facilitates business processes."
+    "p2": "I work on bots, scrapers, front-end and back-end development, and APIs, as well as creation of data analysis reports and tools that facilitates business processes."
   },
     "es": {
         "p1": "Licenciado en Ingeniería en Negocios Internacionales (2024). Tras realizar mi práctica profesional como Analista de Datos, decidí expandir mi conocimiento en la programación, desarrollando proyectos de sitios web, aplicaciones y bases de datos, con enfoque en Django, React y PostgreSQL.",
-        "p2": "He trabajado en la automatización de scrapers, desarrollo de front-end, back-end y APIs para organizaciones, así como en la elaboración de informes de análisis de datos y herramientas que faciliten los procesos de negocios."
+        "p2": "Trabajo en bots, scrapers, desarrollo de front-end, back-end y APIs, así como elaboración de informes de análisis de datos y herramientas que faciliten los procesos de negocios."
     }
 }
