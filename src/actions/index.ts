@@ -19,7 +19,7 @@ export const server = {
       name: z.string().min(4).max(35),
       email: z.string().email().max(35),
       message: z.string().min(4).max(500),
-      company: z.string(),
+      company: z.string().optional(),
     }),
     handler: async (input) => {
       const data: { [key: string]: string } = {};
