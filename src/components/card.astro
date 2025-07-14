@@ -1,14 +1,18 @@
 ---
-const { img, title, tags, link } = Astro.props;
+const { id, img, title, tags, language } = Astro.props;
 
 import Image from "astro/components/Image.astro";
 const tagsArray = Object.values(tags);
 const images = import.meta.glob("../assets/*");
+
+let path = "";
+if (language === "en") {
+  path = "/en";
+}
 ---
 
 <a
-  href={link}
-  target="_blank"
+  href={`${path}/projects/${id}`}
   rel="nofollow"
   class="flex flex-col border-card rounded-lg p-2 mx-8 md:m-0 contenedor-style bg-card backdrop-opacity-50 transition-all text-primary"
 >
@@ -16,6 +20,7 @@ const images = import.meta.glob("../assets/*");
     <Image
       src={img ? images[img]() : img}
       alt=`${title} página`
+      transition:name={`img-${id}`}
       loading="lazy"
       class="rounded-lg h-auto w-full max-w-70 md:w-auto md:max-h-40 mx-auto md:mx-0"
     />
@@ -25,7 +30,9 @@ const images = import.meta.glob("../assets/*");
       >
         {title}
       </span>
-      <p class="text-justify"><slot /></p>
+      <p class="text-justify">
+        <slot />
+      </p>
       <div class="flex flex-wrap gap-2 justify-end items-end mt-auto">
         {
           tagsArray.map((tag) => (
@@ -42,11 +49,6 @@ const images = import.meta.glob("../assets/*");
 </a>
 
 <style>
-  .bg-tag {
-    background: linear-gradient(175deg, #67dab3 20%, #16c98d 120%);
-    filter: saturate(75%);
-  }
-
   .border-card {
     position: relative;
     border: 3px solid transparent;

@@ -22,7 +22,7 @@ const { language } = Astro.props;
       >
     </h2>
   </div>
-  <div class="flex basis-1/2 flex-col justify-center gap-6 px-2">
+  <div class="flex w-full basis-1/2 flex-col justify-center gap-6 px-2">
     <Label
       id="name"
       type="text"
@@ -53,7 +53,7 @@ const { language } = Astro.props;
     <button
       id="enviar"
       type="submit"
-      class="bg-button w-[50%] border-green-400 shadow-sm rounded-md ubuntu-regular text-black font-semibold cursor-pointer py-0.5"
+      class="bg-button w-[150px] border-green-400 shadow-sm rounded-md ubuntu-regular text-black font-semibold cursor-pointer py-0.5 mb-2"
       >{language == "es" ? "Enviar" : "Send"}</button
     >
   </div>
@@ -62,40 +62,47 @@ const { language } = Astro.props;
 <script>
   import { actions } from "astro:actions";
 
-  const form = document.querySelector("#solicitud") as HTMLFormElement;
-  const button = document.querySelector("#enviar") as HTMLButtonElement;
-  const labelName = document.querySelector("#name") as HTMLInputElement;
-  const labelEmail = document.querySelector("#email") as HTMLInputElement;
-  const labelMessage = document.querySelector("#message") as HTMLInputElement;
+  function initForm() {
+    const form = document.querySelector("#solicitud") as HTMLFormElement;
+    const button = document.querySelector("#enviar") as HTMLButtonElement;
+    const labelName = document.querySelector("#name") as HTMLInputElement;
+    const labelEmail = document.querySelector("#email") as HTMLInputElement;
+    const labelMessage = document.querySelector("#message") as HTMLInputElement;
 
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+    if (form) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-      const formData = new FormData(form);
+        const formData = new FormData(form);
 
-      try {
-        const { data, error } = await actions.sendMessage(formData);
+        try {
+          const { data, error } = await actions.sendMessage(formData);
 
-        if (error) {
-          console.error("Error:", error);
-        } else {
-          if (button) {
-            button.textContent = "Enviado";
-            button.classList.add("bg-button-sent");
-            button.classList.remove("bg-button", "cursor-pointer");
-            button.disabled = true;
-            labelName.disabled = true;
-            labelEmail.disabled = true;
-            labelMessage.disabled = true;
+          if (error) {
+            console.error("Error:", error);
+          } else {
+            if (button) {
+              button.textContent = "Enviado";
+              button.classList.add("bg-button-sent");
+              button.classList.remove("bg-button", "cursor-pointer");
+              button.disabled = true;
+              labelName.disabled = true;
+              labelEmail.disabled = true;
+              labelMessage.disabled = true;
+            }
+            console.log("Exito:", data);
           }
-          console.log("Exito:", data);
+        } catch (error) {
+          console.log(error);
         }
-      } catch (error) {
-        console.log(error);
-      }
-    });
+      });
+    }
   }
+
+  initForm();
+  document.addEventListener("astro:after-swap", () => {
+    initForm();
+  });
 </script>
 
 <style>

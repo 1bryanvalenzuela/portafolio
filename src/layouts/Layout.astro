@@ -4,6 +4,7 @@ import Footer from "../components/footer.astro";
 import "../styles/global.css";
 import "@fontsource-variable/ubuntu-sans-mono";
 import "@fontsource-variable/ubuntu-sans";
+import { ClientRouter } from "astro:transitions";
 
 const { language } = Astro.props;
 const cookies = Astro.cookies;
@@ -16,12 +17,13 @@ if (themeCookies) {
 ---
 
 <!doctype html>
-<html class={Theme} lang={language}>
+<html class={`${Theme} min-h-screen`} lang={language}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/bvlogo.svg" />
     <meta name="generator" content={Astro.generator} />
+    <ClientRouter />
     <title>
       {
         language == "es"
@@ -116,7 +118,7 @@ if (themeCookies) {
         : "https://www.bryanvalenzuela.dev/bvenimage.jpg"}
     />
   </head>
-  <body>
+  <body class="flex flex-col min-h-screen">
     <Header language={language} theme={Theme} />
     <slot />
     <Footer language={language} />

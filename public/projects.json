@@ -3,8 +3,8 @@
     "transportes nemo": {
         "title": "Empresas Nemo - Sitio Web",
         "img": "../assets/transportes.webp",
-        "content": "Desarrollé el sitio web para una empresa de transporte. Usé Astro y React para la interfaz y formularios; ExpressJS y PostgreSQL para la creación del backend vía una RestAPI que maneja las solicitudes de la página.",
-        "tags": ["Astro", "React", "ExpressJS", "PostgreSQL"],
+        "content": "Aporté al desarrollo de una pagina web para los clientes y también al desarrollo de un portal para los empleados, tanto en front-end como en back-end. Utilizando HTML, Javascript, Python y SQL (React, Django y PostgreSQL).",
+        "tags": ["Astro", "React", "Django", "PostgreSQL"],
         "link": "https://www.empresasnemo.cl"
     },
     "mp reviews": {
@@ -12,7 +12,7 @@
         "img": "../assets/mp.webp",
         "content": "Creación de una aplicación con el fin de crear una comunidad que pueda opinar e interactuar con los juegos multijugador. Uso de AWS y sus servicios para gestionar las funciones, base de datos, permisos y autentificación; React para la interfaz del usuario y conectar con las bases de datos de DynamoDB y PostgreSQL.",
         "tags": ["React", "AWS", "NoSQL", "PostgreSQL"],
-        "link": "/"
+        "link": ""
     },
     "dashboard": {
         "title": "Dashboard - Productos chilenos",
@@ -24,7 +24,7 @@
     "otros": {
         "title": "Github - Proyectos de análisis de datos",
         "img": "../assets/github.webp",
-        "content": "Más de 10 proyectos y análisis de datos en diferentes áreas. Aplicación de técnicas de predicción, regresión lineal, machine learning y herramientas de procesamiento de lenguaje natural para encontrar insights y mejorar la toma de decisiones",
+        "content": "Distintos proyectos con uso de Javascript y Python, con interfaz de usuario, base de datos, operaciones CRUD, sistema de autentificación y permisos, formularios, RestAPI, etc. Diversos análisis con aplicación de técnicas de predicción (forecasting, arima), regresión lineal, machine learning (sklearn, randomforestregressor, xgbregressor) y herramientas de procesamiento de lenguaje natural (transformers, automodel) para encontrar insights y mejorar la toma de decisiones.",
         "tags": ["Python", "Jupyter Notebook", "Power BI"],
         "link": "https://github.com/1bryanvalenzuela"
     }
@@ -41,7 +41,7 @@
         "img": "../assets/mp.webp",
         "content": "Created an application where the community can review multiplayer games. Used AWS and its services to manage roles, database, permissions and authentication; React for the user interface and fetching from DynamoDB and PostgreSQL databases.",
         "tags": ["React", "AWS", "NoSQL", "PostgreSQL"],
-        "link": "/"
+        "link": ""
     },
     "dashboard": {
         "title": "Dashboard - Chilean products",

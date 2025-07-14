@@ -1,0 +1,149 @@
+---
+import Image from "astro/components/Image.astro";
+import Hero from "../../components/hero.astro";
+import projects from "../../../public/projects.json";
+import Layout from "../../layouts/Layout.astro";
+
+const Projects = projects.es;
+const Params = Astro.params;
+const projectId = Params.id as keyof typeof Projects;
+if (!(projectId in Projects)) {
+  return Astro.redirect("/");
+}
+
+const images = import.meta.glob("../../assets/*");
+const img = ("../" + Projects[projectId].img) as string;
+
+const cookies = Astro.cookies;
+const themeCookies = cookies.get("theme");
+let Theme = "";
+let themeValue = "";
+if (themeCookies) {
+  Theme = themeCookies.value;
+  if (Theme === "dark") {
+    themeValue = "dark";
+  }
+}
+const tagsArray = Object.values(Projects[projectId].tags);
+const url = Projects[projectId].link;
+---
+
+<Layout language="es">
+  <Hero language="es" />
+  <div class="flex flex-grow ubuntu-regular text-primary justify-center pb-5">
+    <div class="flex flex-col w-[720px] px-8 md:px-0 text-justify gap-5 pt-4">
+      <div class="flex justify-center">
+        <Image
+          src={img ? images[img]() : img}
+          alt={`${Projects[projectId].title} página`}
+          transition:name={`img-${projectId}`}
+          loading="eager"
+          class="rounded-lg h-auto w-full"
+        />
+      </div>
+      <div
+        class="flex flex-col md:flex-row justify-between ubuntu-mono-regular text-lg md:text-xl font-bold"
+      >
+        <h1 class="text-start">
+          {Projects[projectId].title}
+        </h1>
+        {
+          url != "" && (
+            <div class="hidden md:flex justify-end">
+              <a
+                href={Projects[projectId].link}
+                rel="nofollow"
+                target="_blank"
+                class="flex text-end items-center linkheader border-b border-transparent"
+              >
+                Visitar
+                <svg
+                  class="ms-1"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <>
+                    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <g id="SVGRepo_iconCarrier">
+                      <g id="Interface / External_Link">
+                        <path
+                          id="Vector"
+                          d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11"
+                          stroke={themeValue == "dark" ? "#ffffff" : "#000000"}
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </g>
+                    </g>
+                  </>
+                </svg>
+              </a>
+            </div>
+          )
+        }
+      </div>
+      <p>{Projects[projectId].content}</p>
+      {
+        url != "" && (
+          <div class="flex md:hidden justify-end">
+            <a
+              href={url}
+              rel="nofollow"
+              target="_blank"
+              class="flex text-end items-center linkheader border-b border-transparent ubuntu-mono-regular text-lg font-bold"
+            >
+              Visitar
+              <svg
+                class="ms-1"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <>
+                  <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <g id="SVGRepo_iconCarrier">
+                    <g id="Interface / External_Link">
+                      <path
+                        id="Vector"
+                        d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11"
+                        stroke={themeValue == "dark" ? "#ffffff" : "#000000"}
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                  </g>
+                </>
+              </svg>
+            </a>
+          </div>
+        )
+      }
+      <div class="flex flex-wrap gap-2 justify-end items-end">
+        {
+          tagsArray.map((tag) => (
+            <span class="rounded-lg bg-tag p-1 leading-none">
+              <span class="text-black px-1 text-sm md:text-md font-semibold">
+                {tag}
+              </span>
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -83,3 +83,8 @@
 .fill-primary {
   fill: #75ae69;
 }
+
+.bg-tag {
+  background: linear-gradient(175deg, #67dab3 20%, #16c98d 120%);
+  filter: saturate(75%);
+}

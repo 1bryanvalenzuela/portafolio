@@ -14,7 +14,7 @@ const { language } = Astro.props;
 <ul class="flex text-primary">
   <li>
     <Link href={language == "es" ? "/cv_bryanv.pdf" : "/cv_bryanv_en.pdf"}
-      >Currículum Vitae</Link
+      >{language == "es" ? "Currículum Vitae" : "Curriculum Vitae"}</Link
     >
   </li>
 </ul>

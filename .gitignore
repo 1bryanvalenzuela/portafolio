@@ -1,3 +1,7 @@
+# custom
+src/components/hero copy.astro
+public/favicon.svg
+
 # build output
 dist/
 

@@ -67,9 +67,10 @@ const projectsArray =
           img={project.img}
           title={project.title}
           tags={project.tags}
-          link={project.link}
+          link={project.link || undefined}
+          language={language}
         >
-          <div set:html={project.content} />
+          <div class="line-clamp-5" set:html={project.content} />
         </Card>
       ))
     }

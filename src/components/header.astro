@@ -5,6 +5,11 @@ let menuColor = "#000000";
 if (theme === "dark") {
   menuColor = "#ffffff";
 }
+
+let path = "";
+if (language === "en") {
+  path = "en/";
+}
 ---
 
 <nav
@@ -57,22 +62,22 @@ if (theme === "dark") {
           class="hidden md:flex flex-col md:flex-row gap-2 md:gap-8 ubuntu-mono-regular md:py-1.5 text-lg z-50 font-bold"
         >
           <li class="py-2">
-            <a href="#inicio" class="linkheader"
+            <a href={`/${path}#inicio`} class="linkheader"
               >{language == "es" ? "/Inicio" : "/Home"}</a
             >
           </li>
           <li class="py-2">
-            <a href="#projects" class="linkheader"
+            <a href={`/${path}#projects`} class="linkheader"
               >{language == "es" ? "/Proyectos" : "/Projects"}</a
             >
           </li>
           <li class="py-2">
-            <a href="#contact" class="linkheader"
+            <a href={`/${path}#contact`} class="linkheader"
               >{language == "es" ? "/Contacto" : "/Contact"}</a
             >
           </li>
           <li class="py-2">
-            <a href="#otros" class="linkheader"
+            <a href={`/${path}#otros`} class="linkheader"
               >{language == "es" ? "/Otros" : "/Others"}</a
             >
           </li>
@@ -86,28 +91,28 @@ if (theme === "dark") {
       >
         <li class="flex w-full">
           <a
-            href="#inicio"
+            href={`/${path}#inicio`}
             class="px-8 py-2 hover:bg-cyan-500 text-primary w-full"
             >{language == "es" ? "/Inicio" : "/Home"}</a
           >
         </li>
         <li class="flex w-full">
           <a
-            href="#projects"
+            href={`/${path}#projects`}
             class="px-8 py-2 hover:bg-cyan-500 text-primary w-full"
             >{language == "es" ? "/Proyectos" : "/Projects"}</a
           >
         </li>
         <li class="flex w-full">
           <a
-            href="#contact"
+            href={`/${path}#contact`}
             class="px-8 py-2 hover:bg-cyan-500 text-primary w-full"
             >{language == "es" ? "/Contacto" : "/Contact"}</a
           >
         </li>
         <li class="flex w-full">
           <a
-            href="#otros"
+            href={`/${path}#otros`}
             class="px-8 py-2 hover:bg-cyan-500 text-primary w-full"
             >{language == "es" ? "/Otros" : "/Others"}</a
           >
@@ -118,7 +123,7 @@ if (theme === "dark") {
 </nav>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  function initHeader() {
     const header = document.querySelector("#header") as HTMLElement;
     if (!header) return;
 
@@ -166,7 +171,7 @@ if (theme === "dark") {
 
       menuLinks.addEventListener("click", () => {
         if (window.innerWidth < 768) {
-          toggleHeader("hide");
+          toggleMenu("hide");
         }
       });
 
@@ -180,14 +185,23 @@ if (theme === "dark") {
     window.addEventListener("scroll", function () {
       let currentScrollPos = window.pageYOffset;
 
-      if (prevScrollpos <= currentScrollPos) {
-        toggleHeader("hide");
-      } else {
+      if (currentScrollPos === 0) {
         toggleHeader("show");
+      } else {
+        if (prevScrollpos <= currentScrollPos) {
+          toggleHeader("hide");
+        } else {
+          toggleHeader("show");
+        }
       }
 
       prevScrollpos = currentScrollPos;
     });
+  }
+
+  initHeader();
+  document.addEventListener("astro:after-swap", () => {
+    initHeader();
   });
 </script>
 
